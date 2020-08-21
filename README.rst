@@ -13,14 +13,13 @@ person
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
 .. image:: https://pyup.io/repos/github/0LL13/person/shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
 
 
-
 A person's points and particulars with plenty of place for paralipomena
+
 
 
 * Free software: MIT license
@@ -30,7 +29,25 @@ A person's points and particulars with plenty of place for paralipomena
 Features
 --------
 
-* TODO
+Currently names of this structure are supported::
+
+    first_name middle_name_1 middle_name_2 last_name/s
+    academic_title/s first_name ... last_name/s
+    peer_title/s first_name ... last_name/s
+    first_name ... peer_preposition last_name/s
+    academic/peer_title first_name ... peer_preposition last_name/s
+
+    There can be first_names like "Robert-Toby"
+    A maximum of three first names is supported
+    There can be last_names like "Smith-Waterman" or "Große Brömer"
+    Academic and peer titles are supported
+    Peer prepositions like "van", "de", "y", "vom" are supported
+
+..
+
+A person can be given a profile. Current profiles are academic, noble,
+politician, member of parliament.
+
 
 Credits
 -------

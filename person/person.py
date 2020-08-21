@@ -67,8 +67,6 @@ class _Name_base:
 @dataclass
 class Name(_Name_default, _Name_base, AttrDisplay):
     def __post_init__(self):
-        if self.last_name == 'Boeselager':
-            self.divorcée = 'Keller'
         first_names = self.first_name.split(' ')
         self.first_name = first_names[0]
         if len(first_names) == 2:

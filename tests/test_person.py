@@ -7,6 +7,35 @@ from person import person
 import pytest
 
 
+names = [["Alfons-Reimund Horst Emil", "Boeselager"],
+         ["Horatio R.", "Pimpernell"],
+         ["Sven Jakob", "Große Brömer"]]
+
+
+def equivalent_names(n1, n2):
+    fn = n2[0].split()[0]
+    ln = n2[-1]
+    try:
+        mn_2 = n2[0].split()[2]
+    except IndexError:
+        mn_2 = None
+    try:
+        mn_1 = n2[0].split()[1]
+    except IndexError:
+        mn_1 = None
+
+    return (n1.first_name == fn and
+            n1.middle_name_1 == mn_1 and
+            n1.middle_name_2 == mn_2 and
+            n1.last_name == ln)
+
+
+@pytest.mark.parametrize("n", names)
+def test_person_Name_para(n):
+    name = person.Name(*n)
+    assert equivalent_names(name, n)
+
+
 def test_person_Name(name_fixture):
     # pylint: disable=W0612, W0613
 
