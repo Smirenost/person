@@ -1,3 +1,16 @@
+[bumpversion]
+current_version = 0.1.0
+commit = True
+tag = True
+
+[bumpversion:file:setup.py]
+search = version='{current_version}'
+replace = version='{new_version}'
+
+[bumpversion:file:person/__init__.py]
+search = __version__ = '{current_version}'
+replace = __version__ = '{new_version}'
+
 [flake8]
 exclude =
     .git,
@@ -5,15 +18,23 @@ exclude =
     .pytest_cache,
     venv
     docs
-
 ignore =
-    H301, E203, E266, E501, W503
+    E203, E266, E501, W503
 
 max-line-length = 88
 max-complexity = 10
 
+select = B,C,E,F,W,T4
+
 [bandit]
 targets: person
+
+[isort]
+multi_line_output=3
+include_trailing_comma=True
+force_grid_wrap=0
+use_parentheses=True
+line_length=88
 
 [coverage:run]
 branch = True
@@ -26,9 +47,18 @@ omit =
 exclude_lines =
     pragma: no cover
     if __name__ == .__main__.:
+show_missing = True
+skip_covered = False
 
 [coverage:html]
 directory = reports
+
+[mypy]
+files=person,tests
+ignore_missing_imports=true
+
+[tool:pytest]
+testpaths=tests/
 
 [pylint]
 persistent=yes

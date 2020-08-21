@@ -98,14 +98,13 @@ class _Peertitle_default:
             titles = self.peer_title.split(' ')
             peer_title = ''
             peer_preposition = ''
-            if len(titles) >= 1:
-                for prep in titles:
-                    if prep.lower() in self.PEER_PREPOSITIONS:
-                        peer_preposition = peer_preposition + prep.lower() + ' '
-                    elif prep in self.PEERTITLES:
-                        peer_title = peer_title + prep + ' '
-                self.peer_preposition = peer_preposition.strip()
-                self.peer_title = peer_title.strip()
+            for prep in titles:
+                if prep.lower() in self.PEER_PREPOSITIONS:
+                    peer_preposition = peer_preposition + prep.lower() + ' '
+                elif prep in self.PEERTITLES:
+                    peer_title = peer_title + prep + ' '
+            self.peer_preposition = peer_preposition.strip()
+            self.peer_title = peer_title.strip()
 
 
 @dataclass
@@ -217,12 +216,12 @@ class _Politician_default:
                 self.ward_no = int(ward_no)
             elif 'Wahlberechtigte' in td.text:
                 voter_count = td.find_next().text.strip()
+                if voter_count[-1] == ']':
+                    voter_count = voter_count[:-3]
                 if ' ' in voter_count:
                     voter_count = ''.join(voter_count.split(' '))
                 elif '.' in voter_count:
                     voter_count = ''.join(voter_count.split('.'))
-                if voter_count[-1] == ']':
-                    voter_count = voter_count[:-3]
                 self.voter_count = int(voter_count)
 
 
@@ -239,6 +238,8 @@ class Politician(_Peertitle_default, _Academic_title_default, _Person_default,
         if self.electoral_ward not in ['ew', 'Landesliste']:
             self.renamed_wards()
             self.scrape_wiki_for_ward()
+        else:
+            self.electoral_ward = "ew"
         if self.party and self.party not in self.parties:
             self.parties.append(self.party)
         if self.minister and self.minister not in self.offices:

@@ -48,10 +48,16 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 person tests
+#	flake8 person tests
+    @echo "\n${BLUE}Running Pylint against source and test files...${NC}\n"
+    @pylint --rcfile=setup.cfg **/*.py
+    @echo "\n${BLUE}Running Flake8 against source and test files...${NC}\n"
+    @flake8
+    @echo "\n${BLUE}Running Bandit against source files...${NC}\n"
+    @bandit -r --ini setup.cfg
 
 test: ## run tests quickly with the default Python
-	pytest
+	@pytest
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -83,3 +89,11 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+
+MODULE := person
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+run:
+ @python -m $(MODULE)

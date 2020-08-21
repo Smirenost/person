@@ -24,10 +24,10 @@ def equivalent_names(n1, n2):
     except IndexError:
         mn_1 = None
 
-    return (n1.first_name == fn and
-            n1.middle_name_1 == mn_1 and
-            n1.middle_name_2 == mn_2 and
-            n1.last_name == ln)
+    return ((n1.first_name == fn) and
+            (n1.middle_name_1 == mn_1) and
+            (n1.middle_name_2 == mn_2) and
+            (n1.last_name == ln))
 
 
 @pytest.mark.parametrize("n", names)
@@ -87,6 +87,14 @@ def test_person_Noble(noble_fixture):
     assert noble.peer_title == "Junker"
     assert noble.peer_preposition == "van"
 
+    noble = person.Noble("Sven Oskar", "Müller", peer_title="Graf Eumel von")
+
+    assert noble.first_name == "Sven"
+    assert noble.middle_name_1 == "Oskar"
+    assert noble.last_name == "Müller"
+    assert noble.peer_title == "Graf"
+    assert noble.peer_preposition == "von"
+
 
 def test_person_Person(person_fixture):
     # pylint: disable=W0612, W0613
@@ -112,7 +120,7 @@ def test_person_Person(person_fixture):
 def test_person_Politician(politician_fixture):
     # pylint: disable=W0612, W0613
 
-    politician = person.Politician(
+    pol_1 = person.Politician(
         "Regina",
         "Dinther",
         party="CDU",
@@ -120,25 +128,37 @@ def test_person_Politician(politician_fixture):
         electoral_ward="Rhein-Sieg-Kreis IV",
     )
 
-    assert politician.first_name == "Regina"
-    assert politician.last_name == "Dinther"
-    assert politician.gender == "female"
-    assert politician.peer_preposition == "van"
-    assert politician.party == "CDU"
-    assert politician.ward_no == 28
-    assert politician.voter_count == 110389
+    assert pol_1.first_name == "Regina"
+    assert pol_1.last_name == "Dinther"
+    assert pol_1.gender == "female"
+    assert pol_1.peer_preposition == "van"
+    assert pol_1.party == "CDU"
+    assert pol_1.ward_no == 28
+    assert pol_1.voter_count == 110389
 
-    politician = person.Politician(
-        "Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I", voter_count=116.389
+    pol_1.party = "fraktionslos"
+    assert pol_1.party == "fraktionslos"
+    assert pol_1.parties == ["CDU"]
+
+    pol_2 = person.Politician(
+        "Regina",
+        "Dinther",
+        party="CDU",
+        electoral_ward="Landesliste",
     )
 
-    assert politician.ward_no == 3
-    assert politician.voter_count == 116389
+    assert pol_2.electoral_ward == "ew"
 
-    politician = person.Politician("Heiner", "Wiekeiner", electoral_ward="Köln I")
+    pol_3 = person.Politician(
+        "Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I"
+    )
 
-    assert politician.ward_no == 13
-    assert politician.voter_count == 121721
+    assert pol_3.voter_count == 116389
+
+    pol_5 = person.Politician("Heiner", "Wiekeiner", electoral_ward="Köln I")
+
+    assert pol_5.ward_no == 13
+    assert pol_5.voter_count == 121721
 
 
 def test_person_MdL(mdl_fixture):
@@ -153,13 +173,15 @@ def test_person_MdL(mdl_fixture):
         electoral_ward="Ennepe-Ruhr-Kreis I",
         minister="JM",
     )
+    mdl.party = "SPD"
 
     assert mdl.legislature == "14"
     assert mdl.first_name == "Alfons-Reimund"
     assert mdl.last_name == "Hubbeldubbel"
     assert mdl.gender == "male"
     assert mdl.peer_preposition == "auf der"
-    assert mdl.party == "Grüne"
+    assert mdl.party == "SPD"
+    assert mdl.parties == ["Grüne"]
     assert mdl.ward_no == 105
     assert mdl.minister == "JM"
 
