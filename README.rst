@@ -40,8 +40,9 @@ Currently names of this structure are supported::
     There can be first_names like "Robert-Toby"
     A maximum of three first names is supported
     There can be last_names like "Smith-Waterman" or "Große Brömer"
-    Academic and peer titles are supported
+    Academic titles like "Prof.", "MBA" or "Dr." are supported
     Peer prepositions like "van", "de", "y", "vom" are supported
+    Peer titles like "Freifrau" or "Junker" are supported
 
 ..
 

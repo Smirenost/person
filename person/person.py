@@ -46,7 +46,8 @@ class AttrDisplay:
 
     def __str__(self) -> str:
         comp_repr = (f'{self.__class__.__name__}:\n' +
-                     '\n'.join(str(attr) for attr in self.gatherAttrs()) + '\n')
+                     '\n'.join(str(attr) for attr in self.gatherAttrs()) +
+                     '\n')
         return comp_repr
 
 
@@ -220,7 +221,7 @@ class _Politician_default:
                     voter_count = voter_count[:-3]
                 if ' ' in voter_count:
                     voter_count = ''.join(voter_count.split(' '))
-                elif '.' in voter_count:
+                else:
                     voter_count = ''.join(voter_count.split('.'))
                 self.voter_count = int(voter_count)
 
@@ -263,3 +264,34 @@ class MdL(_MdL_default, Politician, _MdL_base, AttrDisplay):
         if int(self.legislature) not in range(10, 21):
             raise NotInRange('Number for legislature not in range')
         Politician.__post_init__(self)
+
+
+if __name__ == "__main__":
+    import person
+
+    name = person.Name("Hans Hermann", "Werner")
+    print(name)
+
+    noble = person.Noble("Dagmara", "Bodelschwingh", peer_title="Gräfin von")
+    print(noble)
+
+    academic = person.Academic("Horst Heiner", "Wiekeiner",
+                               academic_title="Dr.")
+    print(academic)
+
+    person_1 = person.Person("Sven", "Rübennase", academic_title="MBA",
+                             born="1990")
+    print(person_1)
+
+    politician = person.Politician("Bärbel", "Gutherz", academic_title="Dr.",
+                                   born="1980", party="SPD",
+                                   electoral_ward="Köln I")
+    print(politician)
+
+    mdl = person.MdL("14", "Tom", "Schwadronius", peer_title="Junker von",
+                     born="1950", party="Grüne")
+    print(mdl)
+
+    mdl.party = "fraktionslos"
+    mdl.electoral_ward = "Düsseldorf II"
+    print(mdl)
