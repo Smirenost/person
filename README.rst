@@ -27,15 +27,15 @@ Overview
 .. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
     :alt: CocoaPods
 
-.. |version| image:: https://img.shields.io/pypi/v/person.svg
-        :target: https://pypi.python.org/pypi/person
+.. |version| image:: https://img.shields.io/pypi/v/person-roles.svg
+        :target: https://pypi.python.org/pypi/person-roles
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person.svg
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
     :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person
+    :target: https://pypi.python.org/pypi/person-roles
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
-        :target: https://person.readthedocs.io/en/latest/?badge=latest
+        :target: https://person-roles.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. |coverage| image:: https://coveralls.io/repos/z4r/person-roles/badge.png?branch=master
@@ -45,9 +45,9 @@ Overview
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person.svg
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
     :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/person
+    :target: https://pypi.python.org/pypi/person-roles
 
 .. end-badges
 

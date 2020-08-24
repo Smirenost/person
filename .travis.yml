@@ -24,3 +24,9 @@ deploy:
     tags: true
     repo: 0LL13/person
     python: 3.8
+
+[testenv]
+passenv =
+    CI
+    TRAVIS
+    TRAVIS_*
