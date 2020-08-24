@@ -49,13 +49,15 @@ setup(
         'dev': ['check-manifest'],
         'test': ['pytest-cov'],
     },
-    entry_points={
-        'console_scripts': [
-            'person-roles = person-roles:main',
-        ],
-    },
     project_urls={
         'Bug Reports': 'https://github.com/0LL13/person/issues',
         'Source': 'https://github.com/0LL13/person',
     },
 )
+
+
+#    entry_points={
+#        'console_scripts': [
+#            'person-roles = person-roles:main',
+#            ],
+#        },
