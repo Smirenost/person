@@ -28,7 +28,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: Implementation :: CPython',
         'Operating System :: POSIX :: Linux',
-        'Topic :: Administration :: General',
+        'Topic :: Other/Nonlisted Topic',
     ],
     description="Roles of persons, their particulars",
     install_requires=requirements,
