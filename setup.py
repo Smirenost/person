@@ -25,11 +25,12 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Operating System :: POSIX :: Linux',
+        'Topic :: Administration :: General',
     ],
     description="Roles of persons, their particulars",
-    entry_points={'console_scripts': ['person=person.cli:main', ], },
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
@@ -42,6 +43,19 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/0LL13/person',
-    version='0.1.1',
+    version='0.1.2',
     zip_safe=False,
+    extras_require={
+        'dev': ['check-manifest'],
+        'test': ['pytest-cov'],
+    },
+    entry_points={
+        'console_scripts': [
+            'person-roles = person-roles:main',
+        ],
+    },
+    project_urls={
+        'Bug Reports': 'https://github.com/0LL13/person/issues',
+        'Source': 'https://github.com/0LL13/person',
+    },
 )

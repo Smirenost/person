@@ -17,6 +17,8 @@ Overview
       - | |license|
     * - update
       - | |update|
+    * - coverage
+      - | |coverage|
 
 .. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
     :target: https://travis-ci.org/0LL13/person
@@ -35,6 +37,9 @@ Overview
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
+
+.. |coverage| image:: https://coveralls.io/repos/z4r/python-coveralls/badge.png?branch=master
+    :target: https://coveralls.io/r/z4r/python-coveralls
 
 .. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
