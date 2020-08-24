@@ -155,10 +155,46 @@ def test_person_Politician(politician_fixture):
 
     assert pol_3.voter_count == 116389
 
+    pol_4 = person.Politician(
+        "15",
+        "Thomas",
+        "Gschwindner",
+        party="not_a_German_party",
+    )
+
+    assert pol_4.party is None
+    assert pol_4.parties == []
+
+    pol_4.add_party("CDU")
+
+    assert pol_4.party == "CDU"
+    assert pol_4.parties == ["CDU"]
+
+    pol_4.add_party("not_a_German_party")
+
+    assert pol_4.party == "CDU"
+    assert pol_4.parties == ["CDU"]
+
+    pol_4.add_party("CDU")
+
+    assert pol_4.parties == ["CDU"]
+
     pol_5 = person.Politician("Heiner", "Wiekeiner", electoral_ward="Köln I")
 
     assert pol_5.ward_no == 13
     assert pol_5.voter_count == 121721
+
+    pol_6 = person.Politician("Heiner", "Wiekeiner")
+
+    assert pol_6.electoral_ward == "ew"
+    assert pol_6.ward_no is None
+    assert pol_6.voter_count is None
+
+    pol_6.change_ward("Essen III")
+
+    assert pol_6.electoral_ward == "Essen III"
+    assert pol_6.ward_no == 67
+    assert pol_6.voter_count == 104181
 
 
 def test_person_MdL(mdl_fixture):
@@ -173,17 +209,20 @@ def test_person_MdL(mdl_fixture):
         electoral_ward="Ennepe-Ruhr-Kreis I",
         minister="JM",
     )
-    mdl.party = "SPD"
 
     assert mdl.legislature == "14"
     assert mdl.first_name == "Alfons-Reimund"
     assert mdl.last_name == "Hubbeldubbel"
     assert mdl.gender == "male"
     assert mdl.peer_preposition == "auf der"
-    assert mdl.party == "SPD"
+    assert mdl.party == "Grüne"
     assert mdl.parties == ["Grüne"]
     assert mdl.ward_no == 105
     assert mdl.minister == "JM"
+
+    mdl.add_party("fraktionslos")
+    assert mdl.party == "fraktionslos"
+    assert mdl.parties == ["Grüne", "fraktionslos"]
 
 
 def test_person_TooManyFirstNames(toomanyfirstnames_fixture):

@@ -191,6 +191,11 @@ class _Politician_default:
     party: str = field(default=None)
     parties: List[str] = field(default_factory=lambda: [])
 
+    GERMAN_PARTIES = ["SPD", "CDU", "FDP", "F.D.P.", "GRÜNE", "Grüne", "AfD",
+                      "Die Partei", "PIRATEN", "Piraten", "LINKE", "CSU",
+                      "DIE PARTEI", "Volt", "ÖDP", "Tierschutzpartei",
+                      "Familie", "fraktionslos"]
+
     def renamed_wards(self):
         renamed_wards = ["Kreis Aachen I", "Hochsauerlandkreis II – Soest III",
                          "Kreis Aachen II"]
@@ -236,15 +241,28 @@ class Politician(_Peertitle_default, _Academic_title_default, _Person_default,
         Noble.__post_init__(self)
         _Person_default.get_sex(self)
         _Person_default.get_age(self)
+        self.change_ward()
+        if self.party in self.GERMAN_PARTIES:
+            self.parties.append(self.party)
+        else:
+            self.party = None
+        if self.minister and self.minister not in self.offices:
+            self.offices.append(self.minister)
+
+    def add_party(self, party):
+        if party in self.GERMAN_PARTIES:
+            self.party = party
+            if self.party not in self.parties:
+                self.parties.append(self.party)
+
+    def change_ward(self, ward=None):
+        if ward:
+            self.electoral_ward = ward
         if self.electoral_ward not in ['ew', 'Landesliste']:
             self.renamed_wards()
             self.scrape_wiki_for_ward()
         else:
             self.electoral_ward = "ew"
-        if self.party and self.party not in self.parties:
-            self.parties.append(self.party)
-        if self.minister and self.minister not in self.offices:
-            self.offices.append(self.minister)
 
 
 @dataclass
@@ -289,9 +307,9 @@ if __name__ == "__main__":
     print(politician)
 
     mdl = person.MdL("14", "Tom", "Schwadronius", peer_title="Junker von",
-                     born="1950", party="Grüne")
+                     born="1950", party="SPD")
     print(mdl)
 
-    mdl.party = "fraktionslos"
-    mdl.electoral_ward = "Düsseldorf II"
+    mdl.add_party("Grüne")
+    mdl.change_ward("Düsseldorf II")
     print(mdl)
