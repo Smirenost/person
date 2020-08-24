@@ -5,7 +5,7 @@
 from setuptools import setup, find_packages
 
 with open('README.rst') as readme_file:
-    readme = readme_file.read()
+    long_description = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
@@ -37,7 +37,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='person, roles',
-    name='person_roles',
+    name='person-roles',
     packages=find_packages(include=['person', 'person.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
