@@ -12,7 +12,7 @@ To install person, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install person
+    $ pip install person-roles
 
 This is the preferred method to install person, as it will always install the most recent stable release.
 

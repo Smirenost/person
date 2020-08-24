@@ -30,3 +30,4 @@ passenv =
     CI
     TRAVIS
     TRAVIS_*
+    CODECOV_*
