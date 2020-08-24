@@ -35,7 +35,7 @@ Overview
     :target: https://pypi.python.org/pypi/person-roles
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
-        :target: https://person-roles.readthedocs.io/en/latest/?badge=latest
+        :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. |coverage| image:: https://coveralls.io/repos/z4r/person-roles/badge.png?branch=master
@@ -70,8 +70,7 @@ These roles have been sketched::
     Academic - academic_title
     Person - gender, born, age, deceased
     Noble - peer_title, peer_preposition
-    Politician - electoral_ward, ward_no, voter_count, minister, offices,
-                 party, parties
+    Politician - electoral_ward, ward_no, voter_count, minister, offices, party, parties
     MdL - legislature, parl_pres, parl_vicePres
 
 ..
