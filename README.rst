@@ -38,9 +38,6 @@ Overview
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. |coverage| image:: https://coveralls.io/repos/z4r/person-roles/badge.png?branch=master
-    :target: https://coveralls.io/r/z4r/person-roles
-
 .. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
@@ -48,6 +45,10 @@ Overview
 .. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
     :alt: Supported implementations
     :target: https://pypi.python.org/pypi/person-roles
+
+.. |coverage| image:: https://img.shields.io/codecov/c/github/0LL13/person?token=edcb046a-1e26-4407-bf70-6150cf15fa38
+    :alt: Codecov
+
 
 .. end-badges
 
