@@ -1,29 +1,52 @@
-======
-person
-======
+========
+Overview
+========
 
+.. start-badges
 
-.. image:: https://img.shields.io/pypi/v/person.svg
+.. list-table::
+    :stub-columns: 1
+
+    * - docs
+      - |docs|
+    * - tests
+      - | |travis|
+    * - package
+      - | |version| |supported-versions| |supported-implementations|
+    * - license
+      - | |license|
+    * - update
+      - | |update|
+
+.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :target: https://travis-ci.org/0LL13/person
+    :alt: Travis-CI Build Status
+
+.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
+    :alt: CocoaPods
+
+.. |version| image:: https://img.shields.io/pypi/v/person.svg
         :target: https://pypi.python.org/pypi/person
 
-.. image:: https://img.shields.io/travis/0LL13/person.svg
-        :target: https://travis-ci.com/0LL13/person
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person.svg
+    :alt: Supported versions
+    :target: https://pypi.python.org/pypi/person
 
-.. image:: https://readthedocs.org/projects/person/badge/?version=latest
+.. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/0LL13/person/shield.svg
+.. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
 
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person.svg
+    :alt: Supported implementations
+    :target: https://pypi.python.org/pypi/person
 
-A person's points and particulars with plenty of place for paralipomena
+.. end-badges
 
-
-
-* Free software: MIT license
-* Documentation: https://person.readthedocs.io.
+Roles of persons, their particulars
 
 
 Features
@@ -37,17 +60,16 @@ Currently names of this structure are supported::
     first_name ... peer_preposition last_name/s
     academic/peer_title first_name ... peer_preposition last_name/s
 
-    There can be first_names like "Robert-Toby"
-    A maximum of three first names is supported
-    There can be last_names like "Smith-Waterman" or "Große Brömer"
-    Academic titles like "Prof.", "MBA" or "Dr." are supported
-    Peer prepositions like "van", "de", "y", "vom" are supported
-    Peer titles like "Freifrau" or "Junker" are supported
+These roles have been sketched::
+
+    Academic - academic_title
+    Person - gender, born, age, deceased
+    Noble - peer_title, peer_preposition
+    Politician - electoral_ward, ward_no, voter_count, minister, offices,
+                 party, parties
+    MdL - legislature, parl_pres, parl_vicePres
 
 ..
-
-A person can be given a profile. Current profiles are academic, noble,
-politician, member of parliament.
 
 
 Credits
@@ -57,3 +79,49 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+Installation
+------------
+
+    pip install person-roles
+
+
+Contribute
+----------
+
+- Issue Tracker: https://github.com/0LL13/person/issues
+- Source: https://github.com/0LL13/person
+
+Support
+-------
+
+Feel free to fork and improve.
+
+Warranty
+--------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY
+DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+License
+-------
+
+MIT License
+
+Copyright (c) 2020 Oliver Stapel
