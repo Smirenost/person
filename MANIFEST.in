@@ -9,3 +9,15 @@ recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
+
+# added by check_manifest.py
+include *.bak
+include *.txt
+include Makefile
+include pytest.ini
+include tox.ini
+recursive-include reports *.css
+recursive-include reports *.html
+recursive-include reports *.js
+recursive-include reports *.json
+recursive-include reports *.png
