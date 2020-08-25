@@ -1,5 +1,5 @@
-Welcome to person's documentation!
-======================================
+Welcome to person-roles' documentation!
+=======================================
 
 .. toctree::
    :maxdepth: 2

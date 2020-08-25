@@ -7,7 +7,7 @@ History
 
 * First release on PyPI.
 
-0.1.5 (2020-08-25)
+0.1.6 (2020-08-25)
 ------------------
 
 * Getting the PyPi description right
