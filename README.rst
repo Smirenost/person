@@ -1,52 +1,39 @@
-.. list-table::
-    :stub-columns: 1
-
-    * - docs
-      - |docs|
-    * - tests
-      - | |travis|
-    * - package
-      - | |version| |supported-versions| |supported-implementations|
-    * - license
-      - | |license|
-    * - update
-      - | |update|
-    * - coverage
-      - | |coverage|
-
-.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :target: https://travis-ci.org/0LL13/person
-    :alt: Travis-CI Build Status
-
-.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
-    :alt: CocoaPods
-
-.. |version| image:: https://img.shields.io/pypi/v/person-roles.svg
-        :target: https://pypi.python.org/pypi/person-roles
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
-    :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
-        :target: https://person.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-.. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
-     :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Updates
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
-    :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. |coverage| image:: https://img.shields.io/codecov/c/github/0LL13/person?token=edcb046a-1e26-4407-bf70-6150cf15fa38
-    :alt: Codecov
-
-
 ============
 person-roles
 ============
+
+.. image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :target: https://travis-ci.org/0LL13/person
+    :alt: Travis-CI Build Status
+
+.. image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
+    :alt: CocoaPods
+
+.. image:: https://img.shields.io/pypi/v/person-roles.svg
+        :target: https://pypi.python.org/pypi/person-roles
+
+.. image:: https://img.shields.io/pypi/pyversions/person-roles.svg
+    :alt: Supported versions
+    :target: https://pypi.python.org/pypi/person-roles
+
+.. image:: https://readthedocs.org/projects/person/badge/?version=latest
+        :target: https://person.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+----------------
+
+.. image:: https://pyup.io/repos/github/0LL13/person/shield.svg
+     :target: https://pyup.io/repos/github/0LL13/person/
+     :alt: Updates
+
+.. image:: https://img.shields.io/pypi/implementation/person-roles.svg
+    :alt: Supported implementations
+    :target: https://pypi.python.org/pypi/person-roles
+
+.. image:: https://img.shields.io/codecov/c/github/0LL13/person?token=edcb046a-1e26-4407-bf70-6150cf15fa38
+    :alt: Codecov
+
+
 
 Roles of persons, their particulars
 
