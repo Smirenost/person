@@ -40,13 +40,13 @@ repos:
     #    types: [python]
     #    pass_filenames: false
 
-    #  - id: bandit
-    #    args: ["-r ./person/person.py"]
-    #    name: bandit
-    #    stages: [commit]
-    #    language: system
-    #    entry: pipenv run bandit
-    #    types: [python]
+  - id: bandit
+    args: ["-r ./person/person.py"]
+    name: bandit
+    stages: [commit]
+    language: system
+    entry: pipenv run bandit
+    types: [python]
 
   - id: pytest-cov
     name: pytest
