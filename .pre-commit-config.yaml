@@ -1,7 +1,6 @@
 # See https://pre-commit.com/ for usage and config
 repos:
-- repo: meta
-  # - repo: local
+- repo: local
   hooks:
   - id: isort
     name: isort
