@@ -3,13 +3,15 @@
 """Tests for `person` package."""
 # pylint: disable=redefined-outer-name
 
-from person import person
 import pytest
 
+from person import person
 
-names = [["Alfons-Reimund Horst Emil", "Boeselager"],
-         ["Horatio R.", "Pimpernell"],
-         ["Sven Jakob", "Große Brömer"]]
+names = [
+    ["Alfons-Reimund Horst Emil", "Boeselager"],
+    ["Horatio R.", "Pimpernell"],
+    ["Sven Jakob", "Große Brömer"],
+]
 
 
 def equivalent_names(n1, n2):
@@ -24,10 +26,12 @@ def equivalent_names(n1, n2):
     except IndexError:
         mn_1 = None
 
-    return ((n1.first_name == fn) and
-            (n1.middle_name_1 == mn_1) and
-            (n1.middle_name_2 == mn_2) and
-            (n1.last_name == ln))
+    return (
+        (n1.first_name == fn)
+        and (n1.middle_name_1 == mn_1)
+        and (n1.middle_name_2 == mn_2)
+        and (n1.last_name == ln)
+    )
 
 
 @pytest.mark.parametrize("n", names)
@@ -141,25 +145,17 @@ def test_person_Politician(politician_fixture):
     assert pol_1.parties == ["CDU"]
 
     pol_2 = person.Politician(
-        "Regina",
-        "Dinther",
-        party="CDU",
-        electoral_ward="Landesliste",
+        "Regina", "Dinther", party="CDU", electoral_ward="Landesliste",
     )
 
     assert pol_2.electoral_ward == "ew"
 
-    pol_3 = person.Politician(
-        "Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I"
-    )
+    pol_3 = person.Politician("Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I")
 
     assert pol_3.voter_count == 116389
 
     pol_4 = person.Politician(
-        "15",
-        "Thomas",
-        "Gschwindner",
-        party="not_a_German_party",
+        "15", "Thomas", "Gschwindner", party="not_a_German_party",
     )
 
     assert pol_4.party is None
@@ -249,8 +245,9 @@ def test_person_NotInRangeError(notinrange_fixture):
 def test_person_AttrDisplay(capsys, attrdisplay_fixture):
     # pylint: disable=W0612, W0613
 
-    from person.person import AttrDisplay
     from dataclasses import dataclass
+
+    from person.person import AttrDisplay
 
     @dataclass
     class MockClass(AttrDisplay):

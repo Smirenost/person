@@ -1,7 +1,8 @@
 # person.py
 from dataclasses import dataclass, field
-from gender_guesser import detector as sex  # type: ignore
 from typing import List, Optional
+
+from gender_guesser import detector as sex  # type: ignore
 
 
 class NotInRange(Exception):
@@ -25,7 +26,11 @@ class AttrDisplay:
     def gatherAttrs(self) -> list:
         attrs = []
         for key in sorted(self.__dict__):
-            if self.__dict__[key] and self.__dict__[key] not in ["unknown", "ew", None]:  # noqa
+            if self.__dict__[key] and self.__dict__[key] not in [
+                "unknown",
+                "ew",
+                None,
+            ]:  # noqa
                 attrs.append(f"{key}={getattr(self, key)}")
         return attrs
 
@@ -251,8 +256,8 @@ class _Politician_default:
             self.electoral_ward = wards[self.electoral_ward]
 
     def scrape_wiki_for_ward(self):
-        from bs4 import BeautifulSoup  # type: ignore
         import requests
+        from bs4 import BeautifulSoup  # type: ignore
 
         URL_base = "https://de.wikipedia.org/wiki/Landtagswahlkreis_{}"
         URL = URL_base.format(self.electoral_ward)
