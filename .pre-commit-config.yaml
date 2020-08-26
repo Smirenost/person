@@ -40,10 +40,19 @@ repos:
     types: [python]
     pass_filenames: false
 
+  - id: bandit
+    name: bandit
+    stages: [commit]
+    language: system
+    entry: pipenv run bandit
+    types: [python]
+
   - id: pytest-cov
     name: pytest
-    stages: [push]
+    stages: [commit]
     language: system
-    entry: pipenv run pytest --cov --cov-fail-under=100
+    entry: pipenv run pytest --cov=person --cov-fail-under=100
     types: [python]
     pass_filenames: false
+
+

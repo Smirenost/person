@@ -31,4 +31,3 @@ passenv =
     TRAVIS
     TRAVIS_*
     CODECOV_*
-
