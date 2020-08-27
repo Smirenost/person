@@ -41,7 +41,8 @@ Overview
     :alt: Supported implementations
     :target: https://pypi.python.org/pypi/person-roles
 
-.. |coverage| image:: https://img.shields.io/codecov/c/github/0LL13/person?token=edcb046a-1e26-4407-bf70-6150cf15fa38
+.. |coverage| image:: https://codecov.io/gh/person/branch/master/graph/badge.svg
+    :target: https//codecov.io/gh/0LL13/person
     :alt: Codecov
 
 .. |version| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
