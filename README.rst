@@ -11,7 +11,7 @@ Overview
       - |docs|
     * - tests
       - | |travis|
-    * - package
+    * - python
       - | |version| |supported-versions| |supported-implementations|
     * - license
       - | |license|
@@ -52,7 +52,8 @@ Overview
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
 
-Roles of persons, their particulars
+
+Roles (academic, politician, ...)  of persons, their particulars
 
 
 Features
@@ -60,11 +61,11 @@ Features
 
 Currently names of this structure are supported::
 
-    first_name middle_name_1 middle_name_2 last_name/s
-    academic_title/s first_name ... last_name/s
-    peer_title/s first_name ... last_name/s
-    first_name ... peer_preposition last_name/s
-    academic/peer_title first_name ... peer_preposition last_name/s
+    Names:                       first_name middle_name_1 middle_name_2 last_name/s
+    Names with academic title:   academic_title/s first_name ... last_name/s
+    Names with peer title:       peer_title/s first_name ... last_name/s
+    Names with peer preposition: first_name ... peer_preposition last_name/s
+    Names with all titles:       academic/peer_title first_name ... peer_preposition last_name/s
 
 These roles have been sketched::
 
