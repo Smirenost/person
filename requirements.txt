@@ -39,7 +39,7 @@ jsonschema==3.2.0
 jupyter-core==4.6.3
 keyring==21.3.1
 lxml==4.5.2
-mando==0.6.4
+mando==0.7.0
 markupsafe==2.0.0a1
 mccabe==0.6.1
 more-itertools==8.4.0
