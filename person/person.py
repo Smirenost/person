@@ -183,11 +183,7 @@ class _Person_default:
 
 @dataclass
 class Person(
-    _Peertitle_default,
-    _Academic_title_default,
-    _Person_default,
-    Name,
-    AttrDisplay,  # noqa
+    _Peertitle_default, _Academic_title_default, _Person_default, Name, AttrDisplay,
 ):
     def __post_init__(self):
         Name.__post_init__(self)
@@ -350,7 +346,9 @@ class Politician(
         parties_tmp = self.parties[:]
         for party in parties_tmp:
             if party_name == party.party_name:
-                party_updated = self.align_party_entries(party, party_name, entry, exit)
+                party_updated = self.align_party_entries(
+                    party, party_name, entry, exit
+                )  # noqa
                 self.parties.remove(party)
                 self.parties.append(party_updated)
                 self.entry = party_updated.entry
