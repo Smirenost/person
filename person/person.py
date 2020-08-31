@@ -1,4 +1,5 @@
-# person.py
+# .py
+import datetime
 from dataclasses import dataclass, field
 from typing import List, Optional
 
@@ -6,6 +7,10 @@ from gender_guesser import detector as sex  # type: ignore
 
 
 class NotInRange(Exception):
+    pass
+
+
+class NotGermanParty(Exception):
     pass
 
 
@@ -170,18 +175,25 @@ class Academic(_Academic_title_default, Name, AttrDisplay):
 class _Person_default:
     gender: str = field(default="unknown")
     born: str = field(default="unknown")
+    date_of_birth: str = field(default="unknown")
     age: str = field(default="unknown")
     deceased: str = field(default="unknown")
+    profession: str = field(default="unknown")
 
 
 @dataclass
 class Person(
-    _Peertitle_default, _Academic_title_default, _Person_default, Name, AttrDisplay
+    _Peertitle_default,
+    _Academic_title_default,
+    _Person_default,
+    Name,
+    AttrDisplay,  # noqa
 ):
     def __post_init__(self):
         Name.__post_init__(self)
         Academic.__post_init__(self)
         self.get_sex()
+        self.get_year_of_birth()
         self.get_age()
 
     def get_sex(self) -> None:
@@ -196,28 +208,24 @@ class Person(
         elif "male" in gender:
             self.gender = "male"
 
-    def get_age(self) -> None:
-        from datetime import date
+    def get_year_of_birth(self) -> None:
+        if self.date_of_birth != "unknown":
+            self.born = self.date_of_birth.split(".")[-1]
 
+    def get_age(self) -> None:
         if self.born != "unknown":
-            if len(self.born) > 4:
-                self.deceased = self.born.strip()[5:]
-                self.born = self.born[:4]
+            born = str(self.born)
+            if len(born) > 4:
+                self.deceased = born.strip()[5:]
+                self.born = born[:4]
             else:
-                today = date.today()
-                self.age = str(int(today.year) - int(self.born.strip()))
+                today = datetime.date.today()
+                self.age = str(int(today.year) - int(born.strip()))
 
 
 @dataclass
-class _Politician_default:
-    electoral_ward: str = field(default="ew")
-    ward_no: Optional[int] = field(default=None)
-    voter_count: Optional[int] = field(default=None)
-    minister: Optional[str] = field(default=None)
-    offices: List[str] = field(default_factory=lambda: [])
-    party: Optional[str] = field(default=None)
-    parties: List[str] = field(default_factory=lambda: [])
-
+class _Party_base:
+    party_name: str
     GERMAN_PARTIES = [
         "SPD",
         "CDU",
@@ -230,6 +238,7 @@ class _Politician_default:
         "PIRATEN",
         "Piraten",
         "LINKE",
+        "Linke",
         "CSU",
         "DIE PARTEI",
         "Volt",
@@ -238,6 +247,29 @@ class _Politician_default:
         "Familie",
         "fraktionslos",
     ]
+
+
+@dataclass
+class _Party_default:
+    entry: str = field(default="unknown")
+    exit: str = field(default="unknown")
+
+
+@dataclass
+class Party(_Party_default, _Party_base, AttrDisplay):
+    def __post_init__(self):
+        if self.party_name not in self.GERMAN_PARTIES:
+            raise NotGermanParty
+
+
+@dataclass
+class _Politician_default:
+    electoral_ward: str = field(default="ew")
+    ward_no: Optional[int] = field(default=None)
+    voter_count: Optional[int] = field(default=None)
+    minister: Optional[str] = field(default=None)
+    offices: List[str] = field(default_factory=lambda: [])
+    parties: List[str] = field(default_factory=lambda: [])
 
     def renamed_wards(self):
         renamed_wards = [
@@ -286,28 +318,52 @@ class Politician(
     _Academic_title_default,
     _Person_default,
     _Politician_default,
+    _Party_default,
     Name,
+    _Party_base,
     AttrDisplay,
 ):
     def __post_init__(self):
         Name.__post_init__(self)
         Academic.__post_init__(self)
         Noble.__post_init__(self)
+        Party.__post_init__(self)
         Person.get_sex(self)
         Person.get_age(self)
         self.change_ward()
-        if self.party in self.GERMAN_PARTIES:
-            self.parties.append(self.party)
-        else:
-            self.party = None
+        if self.party_name in self.GERMAN_PARTIES:
+            self.parties.append(Party(self.party_name, self.entry, self.exit))
         if self.minister and self.minister not in self.offices:
             self.offices.append(self.minister)
 
-    def add_party(self, party):
-        if party in self.GERMAN_PARTIES:
-            self.party = party
-            if self.party not in self.parties:
-                self.parties.append(self.party)
+    def add_Party(self, party_name, entry="unknown", exit="unknown"):
+        if party_name in self.GERMAN_PARTIES:
+            if self.party_is_in_parties(party_name, entry, exit):
+                pass
+            else:
+                self.parties.append(Party(party_name, entry, exit))
+                self.party_name = party_name
+                self.entry = entry
+                self.exit = exit
+
+    def party_is_in_parties(self, party_name, entry, exit):
+        parties_tmp = self.parties[:]
+        for party in parties_tmp:
+            if party_name == party.party_name:
+                party_updated = self.align_party_entries(party, party_name, entry, exit)
+                self.parties.remove(party)
+                self.parties.append(party_updated)
+                self.entry = party_updated.entry
+                self.exit = party_updated.exit
+                return True
+        return False
+
+    def align_party_entries(self, party, party_name, entry, exit) -> Party:
+        if entry != "unknown" and party.entry == "unknown":
+            party.entry = entry
+        if exit != "unknown" and party.exit == "unknown":
+            party.exit = exit
+        return party
 
     def change_ward(self, ward=None):
         if ward:
@@ -328,46 +384,53 @@ class _MdL_default:
 @dataclass
 class _MdL_base:
     legislature: int
+    state: str  # this would be "NRW", "BY", ...
 
 
 @dataclass
 class MdL(_MdL_default, Politician, _MdL_base, AttrDisplay):
     def __post_init__(self):
-        if int(self.legislature) not in range(10, 21):
+        if int(self.legislature) not in range(14, 18):
             raise NotInRange("Number for legislature not in range")
         Politician.__post_init__(self)
 
 
 if __name__ == "__main__":
-    from person import person as person
 
-    name = person.Name("Hans Hermann", "Werner")
+    name = Name("Hans Hermann", "Werner")
     print(name)
 
-    noble = person.Noble("Dagmara", "Bodelschwingh", peer_title="Gräfin von")
+    noble = Noble("Dagmara", "Bodelschwingh", peer_title="Gräfin von")
     print(noble)
 
-    academic = person.Academic("Horst Heiner", "Wiekeiner", academic_title="Dr.")
+    academic = Academic("Horst Heiner", "Wiekeiner", academic_title="Dr.")  # noqa
     print(academic)
 
-    person_1 = person.Person("Sven", "Rübennase", academic_title="MBA", born="1990")
+    person_1 = Person("Sven", "Rübennase", academic_title="MBA", born="1990")  # noqa
     print(person_1)
 
-    politician = person.Politician(
+    politician = Politician(
+        "SPD",
         "Bärbel",
         "Gutherz",
         academic_title="Dr.",
         born="1980",
-        party="SPD",
         electoral_ward="Köln I",
     )
     print(politician)
 
-    mdl = person.MdL(
-        14, "Tom", "Schwadronius", peer_title="Junker von", born="1950", party="SPD"
+    mdl = MdL(
+        14,
+        "NRW",
+        "SPD",
+        "Tom",
+        "Schwadronius",
+        entry="1990",
+        peer_title="Junker von",
+        born="1950",  # noqa
     )
     print(mdl)
 
-    mdl.add_party("Grüne")
+    mdl.add_Party("Grüne", entry="30.11.1999")
     mdl.change_ward("Düsseldorf II")
     print(mdl)

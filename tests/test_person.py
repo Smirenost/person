@@ -6,6 +6,7 @@
 import pytest
 
 from person import person
+from person.person import NotGermanParty, Party
 
 names = [
     ["Alfons-Reimund Horst Emil", "Boeselager"],
@@ -54,7 +55,10 @@ def test_person_Academic(academic_fixture):
     # pylint: disable=W0612, W0613
 
     academic = person.Academic(
-        "Horatio", "Pimpernell", middle_name_1="R.", academic_title="Prof.Dr.   Dr"
+        "Horatio",
+        "Pimpernell",
+        middle_name_1="R.",
+        academic_title="Prof.Dr.   Dr",  # noqa
     )
     assert academic.first_name == "Horatio"
     assert academic.middle_name_1 == "R."
@@ -103,7 +107,7 @@ def test_person_Noble(noble_fixture):
 def test_person_Person(person_fixture):
     # pylint: disable=W0612, W0613
 
-    pers = person.Person("Hugo", "Berserker", academic_title="MBA", born="2000")
+    pers = person.Person("Hugo", "Berserker", academic_title="MBA", born="2000")  # noqa
 
     assert pers.gender == "male"
     assert pers.academic_title == "MBA"
@@ -116,18 +120,19 @@ def test_person_Person(person_fixture):
     assert pers.born == "1980"
     assert pers.deceased == "2010"
 
-    pers = person.Person("Sigrid", "Berserker")
+    pers = person.Person("Sigrid", "Berserker", date_of_birth="10.1.1979")  # noqa
 
     assert pers.gender == "female"
+    assert pers.born == "1979"
 
 
 def test_person_Politician(politician_fixture):
     # pylint: disable=W0612, W0613
 
     pol_1 = person.Politician(
+        "CDU",
         "Regina",
         "Dinther",
-        party="CDU",
         peer_title="van",
         electoral_ward="Rhein-Sieg-Kreis IV",
     )
@@ -136,51 +141,77 @@ def test_person_Politician(politician_fixture):
     assert pol_1.last_name == "Dinther"
     assert pol_1.gender == "female"
     assert pol_1.peer_preposition == "van"
-    assert pol_1.party == "CDU"
+    assert pol_1.party_name == "CDU"
     assert pol_1.ward_no == 28
     assert pol_1.voter_count == 110389
 
-    pol_1.party = "fraktionslos"
-    assert pol_1.party == "fraktionslos"
-    assert pol_1.parties == ["CDU"]
+    pol_1.party_name = "fraktionslos"
+    assert pol_1.party_name == "fraktionslos"
+    assert pol_1.parties == [
+        Party(party_name="CDU", entry="unknown", exit="unknown")
+    ]  # noqa
 
     pol_2 = person.Politician(
-        "Regina", "Dinther", party="CDU", electoral_ward="Landesliste",
-    )
+        "CDU", "Regina", "Dinther", electoral_ward="Landesliste",
+    )  # noqa
 
     assert pol_2.electoral_ward == "ew"
 
-    pol_3 = person.Politician("Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I")
+    pol_3 = person.Politician(
+        "Piraten", "Heiner", "Wiekeiner", electoral_ward="Kreis Aachen I"
+    )  # noqa
 
     assert pol_3.voter_count == 116389
 
-    pol_4 = person.Politician(
-        "15", "Thomas", "Gschwindner", party="not_a_German_party",
-    )
+    with pytest.raises(NotGermanParty):
+        pol_4 = person.Politician("not_a_German_party", "Thomas", "Gschwindner")  # noqa
 
-    assert pol_4.party is None
-    assert pol_4.parties == []
+    pol_4 = person.Politician("FDP", "Thomas", "Gschwindner")
+    pol_4.add_Party("FDP")
 
-    pol_4.add_party("CDU")
+    assert pol_4.party_name == "FDP"
+    assert pol_4.parties == [
+        Party(party_name="FDP", entry="unknown", exit="unknown")
+    ]  # noqa
 
-    assert pol_4.party == "CDU"
-    assert pol_4.parties == ["CDU"]
+    pol_4.add_Party("not_a_German_party")
 
-    pol_4.add_party("not_a_German_party")
+    assert pol_4.party_name == "FDP"
+    assert pol_4.parties == [
+        Party(party_name="FDP", entry="unknown", exit="unknown")
+    ]  # noqa
 
-    assert pol_4.party == "CDU"
-    assert pol_4.parties == ["CDU"]
+    pol_4.add_Party("AfD")
 
-    pol_4.add_party("CDU")
+    assert pol_4.parties == [
+        Party(party_name="FDP", entry="unknown", exit="unknown"),
+        Party(party_name="AfD", entry="unknown", exit="unknown"),
+    ]
 
-    assert pol_4.parties == ["CDU"]
+    pol_4.add_Party("AfD", 2019)
 
-    pol_5 = person.Politician("Heiner", "Wiekeiner", electoral_ward="Köln I")
+    assert pol_4.entry == 2019
+    assert pol_4.parties == [
+        Party(party_name="FDP", entry="unknown", exit="unknown"),
+        Party(party_name="AfD", entry=2019, exit="unknown"),
+    ]
+
+    pol_4.add_Party("AfD", 2019, 2020)
+
+    assert pol_4.exit == 2020
+    assert pol_4.parties == [
+        Party(party_name="FDP", entry="unknown", exit="unknown"),
+        Party(party_name="AfD", entry=2019, exit=2020),
+    ]
+
+    pol_5 = person.Politician(
+        "Linke", "Heiner", "Wiekeiner", electoral_ward="Köln I"
+    )  # noqa
 
     assert pol_5.ward_no == 13
     assert pol_5.voter_count == 121721
 
-    pol_6 = person.Politician("Heiner", "Wiekeiner")
+    pol_6 = person.Politician("Grüne", "Heiner", "Wiekeiner")
 
     assert pol_6.electoral_ward == "ew"
     assert pol_6.ward_no is None
@@ -198,9 +229,10 @@ def test_person_MdL(mdl_fixture):
 
     mdl = person.MdL(
         "14",
+        "NRW",
+        "Grüne",
         "Alfons-Reimund",
         "Hubbeldubbel",
-        party="Grüne",
         peer_title="auf der",
         electoral_ward="Ennepe-Ruhr-Kreis I",
         minister="JM",
@@ -211,14 +243,19 @@ def test_person_MdL(mdl_fixture):
     assert mdl.last_name == "Hubbeldubbel"
     assert mdl.gender == "male"
     assert mdl.peer_preposition == "auf der"
-    assert mdl.party == "Grüne"
-    assert mdl.parties == ["Grüne"]
+    assert mdl.party_name == "Grüne"
+    assert mdl.parties == [
+        Party(party_name="Grüne", entry="unknown", exit="unknown")
+    ]  # noqa
     assert mdl.ward_no == 105
     assert mdl.minister == "JM"
 
-    mdl.add_party("fraktionslos")
-    assert mdl.party == "fraktionslos"
-    assert mdl.parties == ["Grüne", "fraktionslos"]
+    mdl.add_Party("fraktionslos")
+    assert mdl.party_name == "fraktionslos"
+    assert mdl.parties == [
+        Party(party_name="Grüne", entry="unknown", exit="unknown"),
+        Party(party_name="fraktionslos", entry="unknown", exit="unknown"),
+    ]  # noqa
 
 
 def test_person_TooManyFirstNames(toomanyfirstnames_fixture):
@@ -239,7 +276,7 @@ def test_person_NotInRangeError(notinrange_fixture):
     mdl = person.MdL
 
     with pytest.raises(NotInRange):
-        mdl("100", "Alfons-Reimund", "Hubbeldubbel")
+        mdl("100", "NRW", "SPD", "Alfons-Reimund", "Hubbeldubbel")
 
 
 def test_person_AttrDisplay(capsys, attrdisplay_fixture):
