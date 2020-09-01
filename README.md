@@ -33,10 +33,11 @@ These roles have been sketched::
 
 ## Credits
 
-This package was created with `Cookiecutter` and the `audreyr/cookiecutter-pypackage` project template.
+This package was created with
+[`Cookiecutter`](https://github.com/audreyr/cookiecutter) and the 
+[`audreyr/cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage)
+project template.
 
-Cookiecutter: [(https://github.com/audreyr/cookiecutter)]  
-audreyr/cookiecutter: [(https://github.com/audreyr/cookiecutter-pypackage)]
 
 ## Installation
 
