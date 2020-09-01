@@ -1,45 +1,32 @@
 # Overview
 
-    * - docs
-      - |docs|
-    * - tests
-      - | |Codacy Badge|
-    * - python
-      - | |version| |supported-versions| |supported-implementations|
-    * - license
-      - | |license|
-    * - update
-      - | |update|
-    * - coverage
-      - | |coverage|
-    * - CI integration
-      - | |travis|
 
 [![docs](https://readthedocs.org/projects/person/badge/?version=latest)]
-    :target: https://person.readthedocs.io/en/latest/?badge=latest
+    (https://person.readthedocs.io/en/latest/?badge=latest)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
     (https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)
 
 [![version](https://pyup.io/repos/github/0LL13/person/python-3-shield.svg)]
-     :target: https://pyup.io/repos/github/0LL13/person/
+     (https://pyup.io/repos/github/0LL13/person)
 
 [![supported-versions](https://img.shields.io/pypi/pyversions/person-roles.svg)]
-    :target: https://pypi.python.org/pypi/person-roles
+    (https://pypi.python.org/pypi/person-roles)
 
 [![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)]
-    :target: https://pypi.python.org/pypi/person-roles
+    (https://pypi.python.org/pypi/person-roles)
 
 [![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)]
 
 [![update](https://pyup.io/repos/github/0LL13/person/shield.svg)]
-     :target: https://pyup.io/repos/github/0LL13/person/
+     (https://pyup.io/repos/github/0LL13/person)
 
 [![coverage](https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg)]
-    :target: https://codecov.io/gh/0LL13/person
+    (https://codecov.io/gh/0LL13/person)
 
 [![travis](https://travis-ci.org/0LL13/person.svg?branch=master)]
-    :target: https://travis-ci.org/0LL13/person
+    (https://travis-ci.org/0LL13/person)
+
 
 
 
