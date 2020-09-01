@@ -59,7 +59,7 @@ nodeenv==1.5.0
 >>>>>>> master
 packaging==20.4
 pathspec==0.8.0
-pbr==5.4.5
+pbr==5.5.0
 pep517==0.8.2
 pkginfo==1.5.0.1
 plotly==4.9.0
