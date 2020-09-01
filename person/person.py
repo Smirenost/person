@@ -15,11 +15,18 @@ class NotGermanParty(Exception):
 
 
 class TooManyFirstNames(Exception):
+
+    """
+    Currently only one first name and two middle names are supported.
+    Example: Tom H. Paul last_name
+    """
+
     def __init__(self, message):
         print(message)
 
 
 class AttrDisplay:
+
     """
     Mark Lutz, Programming Python
     Provides an inheritable display overload method that shows instances
@@ -40,6 +47,13 @@ class AttrDisplay:
         return attrs
 
     def __str__(self) -> str:
+        """
+        Instances will printed like this:
+            class name
+            attr1=value1
+            attr2=value2
+            ...
+        """
         comp_repr = (
             f"{self.__class__.__name__}:\n"
             + "\n".join(str(attr) for attr in self.gatherAttrs())
@@ -64,6 +78,14 @@ class _Name_base:
 
 @dataclass
 class Name(_Name_default, _Name_base, AttrDisplay):
+
+    """
+    The most basic part to describe a person.
+    To add more middle names, dataclass _Name_default has to be given further
+    middle_name attributes. Since this project currently focusses on German
+    politicians, the limit of three given names is preserved.
+    """
+
     def __post_init__(self):
         first_names = self.first_name.split(" ")
         self.first_name = first_names[0]
@@ -183,7 +205,11 @@ class _Person_default:
 
 @dataclass
 class Person(
-    _Peertitle_default, _Academic_title_default, _Person_default, Name, AttrDisplay,
+    _Peertitle_default,
+    _Academic_title_default,
+    _Person_default,
+    Name,
+    AttrDisplay,  # noqa
 ):
     def __post_init__(self):
         Name.__post_init__(self)
