@@ -44,7 +44,7 @@ lxml==4.5.2
 mando==0.7.0
 markupsafe==1.1.1
 =======
-mando==0.6.4
+mando==0.7.0
 markupsafe==2.0.0a1
 >>>>>>> master
 mccabe==0.6.1
