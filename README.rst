@@ -30,7 +30,6 @@ Overview
 
 .. |Codacy Badge| image:: https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
      :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
-     :alt: codacy
 
 .. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
     :alt: Travis-CI Build Status
