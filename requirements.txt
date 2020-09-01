@@ -80,8 +80,12 @@ pyrsistent==0.16.0
 pytest-cov==2.10.1
 pytest==6.0.1
 pytz==2020.1
+<<<<<<< HEAD
+radon==4.2.0
+=======
 pyyaml==5.3.1
 radon==4.0.0
+>>>>>>> master
 readme-renderer==26.0
 regex==2020.7.14
 requests-toolbelt==0.9.1
