@@ -11,7 +11,7 @@
 
 [![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)](https://pypi.python.org/pypi/person-roles)
 
-[![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)]
+![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)
 
 [![update](https://pyup.io/repos/github/0LL13/person/shield.svg)](https://pyup.io/repos/github/0LL13/person)
 
