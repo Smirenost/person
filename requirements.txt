@@ -64,8 +64,12 @@ pep517==0.8.2
 pkginfo==1.5.0.1
 plotly==4.9.0
 pluggy==0.13.1
+<<<<<<< HEAD
+progress==1.5
+=======
 pre-commit==2.7.1
 progress==1.4
+>>>>>>> master
 py==1.9.0
 pycodestyle==2.6.0
 pycparser==2.20
