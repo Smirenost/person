@@ -1,41 +1,69 @@
-============
-person-roles
-============
+========
+Overview
+========
 
-.. image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :target: https://travis-ci.org/0LL13/person
-    :alt: Travis-CI Build Status
+.. start-badges
 
-.. image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
-    :alt: CocoaPods
+.. list-table::
+    :stub-columns: 1
 
-.. image:: https://img.shields.io/pypi/v/person-roles.svg
-        :target: https://pypi.python.org/pypi/person-roles
+    * - docs
+      - |docs|
+    * - code quality
+      - |Codacy Badge|
+    * - build
+      - | |build|
+    * - python
+      - | |version| |supported-versions| |supported-implementations|
+    * - license
+      - | |license|
+    * - update
+      - | |update|
+    * - coverage
+      - | |coverage| 
+    * - CI integration
+      - | |travis|
 
-.. image:: https://img.shields.io/pypi/pyversions/person-roles.svg
-    :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. image:: https://readthedocs.org/projects/person/badge/?version=latest
+.. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-----------------
+.. |Codacy Badge| image:: https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
+     :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
+     :alt: codacy
 
-.. image:: https://pyup.io/repos/github/0LL13/person/shield.svg
+.. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :alt: Travis-CI Build Status
+
+.. |version| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Updates
+     :alt: Python 3
 
-.. image:: https://img.shields.io/pypi/implementation/person-roles.svg
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
+    :alt: Supported versions
+    :target: https://pypi.python.org/pypi/person-roles
+
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
     :alt: Supported implementations
     :target: https://pypi.python.org/pypi/person-roles
 
-.. image:: https://img.shields.io/codecov/c/github/0LL13/person?token=edcb046a-1e26-4407-bf70-6150cf15fa38
-    :alt: Codecov
+.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
+    :alt: CocoaPods
 
+.. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
+     :target: https://pyup.io/repos/github/0LL13/person/
+     :alt: Updates
 
+.. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/0LL13/person
 
-Roles of persons, their particulars
+.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :target: https://travis-ci.org/0LL13/person
+    :alt: Travis-CI Build Status
+
+.. end-badges
+
+Roles (academic, politician, ...)  of persons, their particulars
 
 
 Features
@@ -43,11 +71,11 @@ Features
 
 Currently names of this structure are supported::
 
-    first_name middle_name_1 middle_name_2 last_name/s
-    academic_title/s first_name ... last_name/s
-    peer_title/s first_name ... last_name/s
-    first_name ... peer_preposition last_name/s
-    academic/peer_title first_name ... peer_preposition last_name/s
+    Names:                       first_name middle_name_1 middle_name_2 last_name/s
+    Names with academic title:   academic_title/s first_name ... last_name/s
+    Names with peer title:       peer_title/s first_name ... last_name/s
+    Names with peer preposition: first_name ... peer_preposition last_name/s
+    Names with all titles:       academic/peer_title first_name ... peer_preposition last_name/s
 
 These roles have been sketched::
 
