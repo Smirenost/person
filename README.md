@@ -35,8 +35,8 @@ These roles have been sketched::
 
 This package was created with `Cookiecutter` and the `audreyr/cookiecutter-pypackage` project template.
 
-Cookiecutter: [https://github.com/audreyr/cookiecutter]  
-audreyr/cookiecutter: [https://github.com/audreyr/cookiecutter-pypackage]
+Cookiecutter: [(https://github.com/audreyr/cookiecutter)]  
+audreyr/cookiecutter: [(https://github.com/audreyr/cookiecutter-pypackage)]
 
 ## Installation
 
@@ -57,8 +57,8 @@ audreyr/cookiecutter: [https://github.com/audreyr/cookiecutter-pypackage]
 
 ## Contribute
 
-- Issue Tracker: https://github.com/0LL13/person/issues
-- Source: https://github.com/0LL13/person
+- Issue Tracker: [(https://github.com/0LL13/person/issues)]
+- Source: [(https://github.com/0LL13/person)]
 
 ## Support
 
