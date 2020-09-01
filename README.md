@@ -11,7 +11,7 @@
 
 [![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)](https://pypi.python.org/pypi/person-roles)
 
-[![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)]
+[license](https://img.shields.io/cocoapods/l/AFNetworking.svg)
 
 [![update](https://pyup.io/repos/github/0LL13/person/shield.svg)](https://pyup.io/repos/github/0LL13/person)
 
@@ -41,26 +41,23 @@ These roles have been sketched::
     Politician - electoral_ward, ward_no, voter_count, minister, offices, party, parties
     MdL - legislature, parl_pres, parl_vicePres
 
-..
-
 
 ## Credits
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter and the `audreyr/cookiecutter-pypackage` project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+Cookiecutter: https://github.com/audreyr/cookiecutter
+`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
 
 ## Installation
 
-::
 
     pip install person-roles
 
+
 ## Usage
 
-::
 
     import person
 
