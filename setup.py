@@ -2,56 +2,62 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup  # type: ignore
 
-with open('README.rst') as readme_file:
+with open("README.rst") as readme_file:
     long_description = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
+with open("HISTORY.rst") as history_file:
     history = history_file.read()
 
-requirements = ['beautifulsoup4', 'lxml', 'requests', 'gender-guesser', ]
+requirements = [
+    "beautifulsoup4",
+    "lxml",
+    "requests",
+    "gender-guesser",
+]
 
-setup_requirements = ['pytest-runner', ]
+setup_requirements = [
+    "pytest-runner",
+]
 
-test_requirements = ['pytest>=3', ]
+test_requirements = [
+    "pytest>=3",
+]
 
 setup(
     author="Oliver Stapel",
-    author_email='hardy.ecc95@gmail.com',
-    python_requires='>=3.8',
+    author_email="hardy.ecc95@gmail.com",
+    python_requires=">=3.8",
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Operating System :: POSIX :: Linux',
-        'Topic :: Other/Nonlisted Topic',
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Operating System :: POSIX :: Linux",
+        "Topic :: Other/Nonlisted Topic",
     ],
     description="Roles of persons, their particulars",
     install_requires=requirements,
     license="MIT license",
-    long_description=long_description + '\n\n' + history,
+    long_description=long_description + "\n\n" + history,
     long_description_content_type="text/markdown",
     include_package_data=True,
-    keywords='person, roles',
-    name='person-roles',
-    packages=find_packages(include=['person', 'person.*']),
+    keywords="person, roles",
+    name="person-roles",
+    packages=find_packages(include=["person", "person.*"]),
     setup_requires=setup_requirements,
-    test_suite='tests',
+    test_suite="tests",
     tests_require=test_requirements,
-    url='https://github.com/0LL13/person',
-    version='0.1.7',
+    url="https://github.com/0LL13/person",
+    version="0.1.8",
     zip_safe=False,
-    extras_require={
-        'dev': ['check-manifest'],
-        'test': ['pytest-cov'],
-    },
+    extras_require={"dev": ["check-manifest"], "test": ["pytest-cov"],},
     project_urls={
-        'Bug Reports': 'https://github.com/0LL13/person/issues',
-        'Source': 'https://github.com/0LL13/person',
+        "Bug Reports": "https://github.com/0LL13/person/issues",
+        "Source": "https://github.com/0LL13/person",
     },
 )
 
