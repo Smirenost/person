@@ -54,7 +54,7 @@ mypy==0.782
 <<<<<<< HEAD
 nbformat==5.0.7
 =======
-nbformat==4.4.0
+nbformat==5.0.7
 nodeenv==1.5.0
 >>>>>>> master
 packaging==20.4
