@@ -15,13 +15,14 @@ class NotGermanParty(Exception):
 
 
 class TooManyFirstNames(Exception):
-
     """
+
     Currently only one first name and two middle names are supported.
     Example: Tom H. Paul last_name
     """
 
     def __init__(self, message):
+        """ use like: raise TooManyFirstNames ("message") """
         print(message)
 
 
@@ -87,14 +88,20 @@ class Name(_Name_default, _Name_base, AttrDisplay):
     """
 
     def __post_init__(self):
+        """
+        In case a Name instance is initialized with all first names in one
+        string, __post_init__ will take care of this and assign each first
+        name its attribute. Also it will raise TooManyFirstNames if more than
+        three first names are given.
+        """
         first_names = self.first_name.split(" ")
         self.first_name = first_names[0]
         if len(first_names) == 2:
             self.middle_name_1 = first_names[1]
-        if len(first_names) == 3:
+        elif len(first_names) == 3:
             self.middle_name_1 = first_names[1]
             self.middle_name_2 = first_names[-1]
-        if len(first_names) > 3:
+        elif len(first_names) > 3:
             print(first_names)
             raise TooManyFirstNames("There are more than three first names!")
 
@@ -368,6 +375,13 @@ class Politician(
                 self.entry = entry
                 self.exit = exit
 
+    def align_party_entries(self, party, party_name, entry, exit) -> Party:
+        if entry != "unknown" and party.entry == "unknown":
+            party.entry = entry
+        if exit != "unknown" and party.exit == "unknown":
+            party.exit = exit
+        return party
+
     def party_is_in_parties(self, party_name, entry, exit):
         parties_tmp = self.parties[:]
         for party in parties_tmp:
@@ -381,13 +395,6 @@ class Politician(
                 self.exit = party_updated.exit
                 return True
         return False
-
-    def align_party_entries(self, party, party_name, entry, exit) -> Party:
-        if entry != "unknown" and party.entry == "unknown":
-            party.entry = entry
-        if exit != "unknown" and party.exit == "unknown":
-            party.exit = exit
-        return party
 
     def change_ward(self, ward=None):
         if ward:
