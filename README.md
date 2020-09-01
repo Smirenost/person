@@ -58,8 +58,8 @@ project template.
 
 ## Contribute
 
-- Issue Tracker: [(https://github.com/0LL13/person/issues)]
-- Source: [(https://github.com/0LL13/person)]
+- [Issue Tracker](https://github.com/0LL13/person/issues)
+- [Source](https://github.com/0LL13/person)
 
 ## Support
 
