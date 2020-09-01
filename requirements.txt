@@ -51,8 +51,12 @@ mccabe==0.6.1
 more-itertools==8.5.0
 mypy-extensions==0.4.3
 mypy==0.782
+<<<<<<< HEAD
+nbformat==5.0.7
+=======
 nbformat==4.4.0
 nodeenv==1.5.0
+>>>>>>> master
 packaging==20.4
 pathspec==0.8.0
 pbr==5.4.5
