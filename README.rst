@@ -18,40 +18,45 @@ Overview
     * - update
       - | |update|
     * - coverage
-      - | |coverage|
+      - | |coverage| |Codacy Badge|
     * - CI integration
       - | |travis|
-
-.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :target: https://travis-ci.org/0LL13/person
-    :alt: Travis-CI Build Status
-
-.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
-    :alt: CocoaPods
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
-    :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person-roles
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
         :target: https://person.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
-    :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/0LL13/person
+.. |Codacy Badge| image:: https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
+     :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
+     :alt: codacy
 
 .. |version| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Python 3
 
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
+    :alt: Supported versions
+    :target: https://pypi.python.org/pypi/person-roles
+
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
+    :alt: Supported implementations
+    :target: https://pypi.python.org/pypi/person-roles
+
+.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
+    :alt: CocoaPods
+
 .. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
      :target: https://pyup.io/repos/github/0LL13/person/
      :alt: Updates
 
+.. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/0LL13/person
+
+.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :target: https://travis-ci.org/0LL13/person
+    :alt: Travis-CI Build Status
+
+.. end-badges
 
 Roles (academic, politician, ...)  of persons, their particulars
 
