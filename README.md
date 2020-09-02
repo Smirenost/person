@@ -1,6 +1,5 @@
 # Overview
 
-
 [![docs](https://readthedocs.org/projects/person/badge/?version=latest)](https://person.readthedocs.io/en/latest/?badge=latest)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)](https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)
 [![version](https://pyup.io/repos/github/0LL13/person/python-3-shield.svg)](https://pyup.io/repos/github/0LL13/person)
