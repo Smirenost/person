@@ -117,4 +117,4 @@ typing-extensions==3.7.4.3
 urllib3==1.25.10
 virtualenv==20.0.31
 webencodings==0.5.1
-wily==1.18.0
+wily==1.19.0
