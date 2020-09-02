@@ -1,14 +1,14 @@
 # Overview
 
-[![docs](https://readthedocs.org/projects/person/badge/?version=latest)](https://person.readthedocs.io/en/latest/?badge=latest)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)](https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)
+[![docs](https://readthedocs.org/projects/person/badge/?version=latest)](https://person.readthedocs.io/en/latest/?badge=latest)  
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)](https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)  
 [![version](https://pyup.io/repos/github/0LL13/person/python-3-shield.svg)](https://pyup.io/repos/github/0LL13/person)
 [![supported-versions](https://img.shields.io/pypi/pyversions/person-roles.svg)](https://pypi.python.org/pypi/person-roles)
-[![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)](https://pypi.python.org/pypi/person-roles)
-![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)
+[![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)](https://pypi.python.org/pypi/person-roles)  
+![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)  
 [![update](https://pyup.io/repos/github/0LL13/person/shield.svg)](https://pyup.io/repos/github/0LL13/person)
 [![coverage](https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg)](https://codecov.io/gh/0LL13/person)
-[![travis](https://travis-ci.org/0LL13/person.svg?branch=master)](https://travis-ci.org/0LL13/person)
+[![travis](https://travis-ci.org/0LL13/person.svg?branch=master)](https://travis-ci.org/0LL13/person)  
 
 Roles (academic, politician, ...)  of persons, their particulars
 
