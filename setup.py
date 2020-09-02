@@ -4,7 +4,7 @@
 
 from setuptools import find_packages, setup  # type: ignore
 
-with open("README.rst") as readme_file:
+with open("README.md") as readme_file:
     long_description = readme_file.read()
 
 with open("HISTORY.rst") as history_file:
