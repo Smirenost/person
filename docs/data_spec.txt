@@ -1,0 +1,65 @@
+Which data do I want to retrieve?
+
+sums / percentages / ratios: gender, academic, speeches, laughter, ...
+
+
+Data that needs to be retrieved together:
+
+    speech, question, pers. statement, written statement:
+
+	date
+	year
+	term
+	protocol no.
+	speaker -> name, party (might not apply to the time the speech was held), gender, ...
+	tags
+	pages
+	url
+	state
+	party
+	content
+	identifier
+	reactions (list)
+	
+    member of parliament:
+    	name
+    	age
+    	gender
+    	title/s
+    	state
+    	term
+    	entry
+    	exit
+    	party
+    	speeches (list of identifiers)
+    	identifier
+    	
+    term:
+    	state
+    	date from
+    	date to
+    	members -> ratio of men/women, academics, ...
+    	cabinet
+    	ministers
+    	parties -> distribution
+    	
+    
+    sessions:
+    	state
+    	term
+    	year
+    	date
+    	protocol no.
+    	speakers (list of identifiers)
+    	speeches (dto.)
+
+    reactions like laughter, applause
+    	speech identifier -> date, year, term, protocol no.
+    	party
+    	member
+    	gender
+    	type of reaction
+    
+    
+    	
+	    	

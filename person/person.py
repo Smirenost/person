@@ -1,7 +1,7 @@
 # .py
 import datetime
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import List, Optional, Set
 
 from gender_guesser import detector as sex  # type: ignore
 
@@ -410,6 +410,15 @@ class Politician(
 class _MdL_default:
     parl_pres: bool = field(default=False)
     parl_vicePres: bool = field(default=False)
+    entry: str = field(default="unknown")  # date string: "11.3.2015"
+    exit: str = field(default="unknown")  # dto.
+    speeches: List[str] = field(
+        default_factory=lambda: []
+    )  # identifiers for speeches # noqa
+    reactions: List[str] = field(
+        default_factory=lambda: []
+    )  # identifiers for reactions #noqa
+    membership: Set[str] = field(default_factory=lambda: set())  # terms or years? #noqa
 
 
 @dataclass
@@ -423,6 +432,8 @@ class MdL(_MdL_default, Politician, _MdL_base, AttrDisplay):
     def __post_init__(self):
         if int(self.legislature) not in range(14, 18):
             raise NotInRange("Number for legislature not in range")
+        else:
+            self.membership.add(self.legislature)
         Politician.__post_init__(self)
 
 
