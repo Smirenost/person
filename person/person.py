@@ -15,14 +15,14 @@ class NotGermanParty(Exception):
 
 
 class TooManyFirstNames(Exception):
-    """
 
+    """
     Currently only one first name and two middle names are supported.
     Example: Tom H. Paul last_name
     """
 
     def __init__(self, message):
-        """ use like: raise TooManyFirstNames ("message") """
+        """use like: raise TooManyFirstNames ("message")"""
         print(message)
 
 
@@ -168,6 +168,7 @@ class _Peertitle_default:
 @dataclass
 class Noble(_Peertitle_default, Name, AttrDisplay):
     def __post_init__(self):
+        """Initialize names and titles."""
         Name.__post_init__(self)
         self.title()
 
@@ -280,8 +281,8 @@ class _Party_base:
 
 @dataclass
 class _Party_default:
-    entry: str = field(default="unknown")
-    exit: str = field(default="unknown")
+    party_entry: str = field(default="unknown")
+    party_exit: str = field(default="unknown")
 
 
 @dataclass
@@ -361,38 +362,44 @@ class Politician(
         Person.get_age(self)
         self.change_ward()
         if self.party_name in self.GERMAN_PARTIES:
-            self.parties.append(Party(self.party_name, self.entry, self.exit))
+            self.parties.append(
+                Party(self.party_name, self.party_entry, self.party_exit)
+            )  # noqa
         if self.minister and self.minister not in self.offices:
             self.offices.append(self.minister)
 
-    def add_Party(self, party_name, entry="unknown", exit="unknown"):
+    def add_Party(
+        self, party_name, party_entry="unknown", party_exit="unknown"
+    ):  # noqa
         if party_name in self.GERMAN_PARTIES:
-            if self.party_is_in_parties(party_name, entry, exit):
+            if self.party_is_in_parties(party_name, party_entry, party_exit):
                 pass
             else:
-                self.parties.append(Party(party_name, entry, exit))
+                self.parties.append(Party(party_name, party_entry, party_exit))
                 self.party_name = party_name
-                self.entry = entry
-                self.exit = exit
+                self.party_entry = party_entry
+                self.party_exit = party_exit
 
-    def align_party_entries(self, party, party_name, entry, exit) -> Party:
-        if entry != "unknown" and party.entry == "unknown":
-            party.entry = entry
-        if exit != "unknown" and party.exit == "unknown":
-            party.exit = exit
+    def align_party_entries(
+        self, party, party_name, party_entry, party_exit
+    ) -> Party:  # noqa
+        if party_entry != "unknown" and party.party_entry == "unknown":
+            party.party_entry = party_entry
+        if party_exit != "unknown" and party.party_exit == "unknown":
+            party.party_exit = party_exit
         return party
 
-    def party_is_in_parties(self, party_name, entry, exit):
+    def party_is_in_parties(self, party_name, party_entry, party_exit):
         parties_tmp = self.parties[:]
         for party in parties_tmp:
             if party_name == party.party_name:
                 party_updated = self.align_party_entries(
-                    party, party_name, entry, exit
+                    party, party_name, party_entry, party_exit
                 )  # noqa
                 self.parties.remove(party)
                 self.parties.append(party_updated)
-                self.entry = party_updated.entry
-                self.exit = party_updated.exit
+                self.party_entry = party_updated.party_entry
+                self.party_exit = party_updated.party_exit
                 return True
         return False
 
@@ -410,8 +417,8 @@ class Politician(
 class _MdL_default:
     parl_pres: bool = field(default=False)
     parl_vicePres: bool = field(default=False)
-    entry: str = field(default="unknown")  # date string: "11.3.2015"
-    exit: str = field(default="unknown")  # dto.
+    parliament_entry: str = field(default="unknown")  # date string: "11.3.2015"  # noqa
+    parliament_exit: str = field(default="unknown")  # dto.
     speeches: List[str] = field(
         default_factory=lambda: []
     )  # identifiers for speeches # noqa
@@ -467,12 +474,12 @@ if __name__ == "__main__":
         "SPD",
         "Tom",
         "Schwadronius",
-        entry="1990",
+        party_entry="1990",
         peer_title="Junker von",
         born="1950",  # noqa
     )
     print(mdl)
 
-    mdl.add_Party("Grüne", entry="30.11.1999")
+    mdl.add_Party("Grüne", party_entry="30.11.1999")
     mdl.change_ward("Düsseldorf II")
     print(mdl)

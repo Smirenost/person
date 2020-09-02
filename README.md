@@ -37,7 +37,6 @@ This package was created with
 [`audreyr/cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage)
 project template.
 
-
 ## Installation
 
     pip install person-roles
@@ -57,7 +56,7 @@ project template.
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/0LL13/person/issues)
+- [Issue Tracker](https://github.com/0LL13/person/issues)  
 - [Source](https://github.com/0LL13/person)
 
 ## Support

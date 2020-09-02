@@ -148,7 +148,7 @@ def test_person_Politician(politician_fixture):
     pol_1.party_name = "fraktionslos"
     assert pol_1.party_name == "fraktionslos"
     assert pol_1.parties == [
-        Party(party_name="CDU", entry="unknown", exit="unknown")
+        Party(party_name="CDU", party_entry="unknown", party_exit="unknown")
     ]  # noqa
 
     pol_2 = person.Politician(
@@ -171,37 +171,37 @@ def test_person_Politician(politician_fixture):
 
     assert pol_4.party_name == "FDP"
     assert pol_4.parties == [
-        Party(party_name="FDP", entry="unknown", exit="unknown")
+        Party(party_name="FDP", party_entry="unknown", party_exit="unknown")
     ]  # noqa
 
     pol_4.add_Party("not_a_German_party")
 
     assert pol_4.party_name == "FDP"
     assert pol_4.parties == [
-        Party(party_name="FDP", entry="unknown", exit="unknown")
+        Party(party_name="FDP", party_entry="unknown", party_exit="unknown")
     ]  # noqa
 
     pol_4.add_Party("AfD")
 
     assert pol_4.parties == [
-        Party(party_name="FDP", entry="unknown", exit="unknown"),
-        Party(party_name="AfD", entry="unknown", exit="unknown"),
+        Party(party_name="FDP", party_entry="unknown", party_exit="unknown"),
+        Party(party_name="AfD", party_entry="unknown", party_exit="unknown"),
     ]
 
-    pol_4.add_Party("AfD", 2019)
+    pol_4.add_Party("AfD", party_entry="2019")
 
-    assert pol_4.entry == 2019
+    assert pol_4.party_entry == "2019"
     assert pol_4.parties == [
-        Party(party_name="FDP", entry="unknown", exit="unknown"),
-        Party(party_name="AfD", entry=2019, exit="unknown"),
+        Party(party_name="FDP", party_entry="unknown", party_exit="unknown"),
+        Party(party_name="AfD", party_entry="2019", party_exit="unknown"),
     ]
 
-    pol_4.add_Party("AfD", 2019, 2020)
+    pol_4.add_Party("AfD", party_entry="2019", party_exit="2020")
 
-    assert pol_4.exit == 2020
+    assert pol_4.party_exit == "2020"
     assert pol_4.parties == [
-        Party(party_name="FDP", entry="unknown", exit="unknown"),
-        Party(party_name="AfD", entry=2019, exit=2020),
+        Party(party_name="FDP", party_entry="unknown", party_exit="unknown"),
+        Party(party_name="AfD", party_entry="2019", party_exit="2020"),
     ]
 
     pol_5 = person.Politician(
@@ -245,7 +245,7 @@ def test_person_MdL(mdl_fixture):
     assert mdl.peer_preposition == "auf der"
     assert mdl.party_name == "Grüne"
     assert mdl.parties == [
-        Party(party_name="Grüne", entry="unknown", exit="unknown")
+        Party(party_name="Grüne", party_entry="unknown", party_exit="unknown")
     ]  # noqa
     assert mdl.ward_no == 105
     assert mdl.minister == "JM"
@@ -253,8 +253,10 @@ def test_person_MdL(mdl_fixture):
     mdl.add_Party("fraktionslos")
     assert mdl.party_name == "fraktionslos"
     assert mdl.parties == [
-        Party(party_name="Grüne", entry="unknown", exit="unknown"),
-        Party(party_name="fraktionslos", entry="unknown", exit="unknown"),
+        Party(party_name="Grüne", party_entry="unknown", party_exit="unknown"),
+        Party(
+            party_name="fraktionslos", party_entry="unknown", party_exit="unknown"
+        ),  # noqa
     ]  # noqa
 
 
