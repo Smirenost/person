@@ -1,72 +1,18 @@
-========
-Overview
-========
+# Overview
 
-.. start-badges
-
-.. list-table::
-    :stub-columns: 1
-
-    * - docs
-      - |docs|
-    * - code quality
-      - |Codacy Badge|
-    * - build
-      - | |build|
-    * - python
-      - | |py3| |supported-versions| |supported-implementations|
-    * - license
-      - | |license|
-    * - update
-      - | |update|
-    * - coverage
-      - | |coverage| 
-    * - CI integration
-      - | |travis|
-
-.. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
-        :target: https://person.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-.. |Codacy Badge| image:: https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
-     :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
-
-.. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :alt: Travis-CI Build Status
-
-.. |py3| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
-     :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Python 3
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
-    :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
-    :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/person-roles
-
-.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
-    :alt: CocoaPods
-
-.. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
-     :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Updates
-
-.. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/0LL13/person
-
-.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :target: https://travis-ci.org/0LL13/person
-    :alt: Travis-CI Build Status
-
-.. end-badges
+[![docs](https://readthedocs.org/projects/person/badge/?version=latest)](https://person.readthedocs.io/en/latest/?badge=latest)  
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)](https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)  
+[![version](https://pyup.io/repos/github/0LL13/person/python-3-shield.svg)](https://pyup.io/repos/github/0LL13/person)
+[![supported-versions](https://img.shields.io/pypi/pyversions/person-roles.svg)](https://pypi.python.org/pypi/person-roles)
+[![supported-implementations](https://img.shields.io/pypi/implementation/person-roles.svg)](https://pypi.python.org/pypi/person-roles)  
+![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)  
+[![update](https://pyup.io/repos/github/0LL13/person/shield.svg)](https://pyup.io/repos/github/0LL13/person)
+[![coverage](https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg)](https://codecov.io/gh/0LL13/person)
+[![travis](https://travis-ci.org/0LL13/person.svg?branch=master)](https://travis-ci.org/0LL13/person)  
 
 Roles (academic, politician, ...)  of persons, their particulars
 
-
-Features
---------
+## Features
 
 Currently names of this structure are supported::
 
@@ -84,29 +30,18 @@ These roles have been sketched::
     Politician - electoral_ward, ward_no, voter_count, minister, offices, party, parties
     MdL - legislature, parl_pres, parl_vicePres
 
-..
+## Credits
 
+This package was created with
+[`Cookiecutter`](https://github.com/audreyr/cookiecutter) and the 
+[`audreyr/cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage)
+project template.
 
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-
-
-Installation
-------------
-
-::
+## Installation
 
     pip install person-roles
 
-Usage
------
-
-::
+## Usage
 
     import person
 
@@ -119,20 +54,16 @@ Usage
     last_name=Smith
     middle_name_1=H.
 
+## Contribute
 
-Contribute
-----------
+- [Issue Tracker](https://github.com/0LL13/person/issues)  
+- [Source](https://github.com/0LL13/person)
 
-- Issue Tracker: https://github.com/0LL13/person/issues
-- Source: https://github.com/0LL13/person
-
-Support
--------
+## Support
 
 Feel free to fork and improve.
 
-Warranty
---------
+## Warranty
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -152,8 +83,7 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
 
-License
--------
+## License
 
 MIT License
 

@@ -17,8 +17,22 @@ include *.yml
 include Makefile
 include pytest.ini
 include tox.ini
+include *.html
+include *.yaml
+include .coveragerc
 recursive-include reports *.css
 recursive-include reports *.html
 recursive-include reports *.js
 recursive-include reports *.json
 recursive-include reports *.png
+recursive-include docs *.odt
+recursive-include docs *.txt
+
+# added by check_manifest.py
+include *.mrkdwn
+
+# added by check_manifest.py
+include *.mrkdwn
+
+# added by check_manifest.py
+include *.mrkdwn
