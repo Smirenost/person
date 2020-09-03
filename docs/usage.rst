@@ -41,8 +41,7 @@ Using Academic::
 
 Using Person::
 
-    person_1 = person.Person("Sven", "Rübennase", academic_title="MBA",
-                             born="1990")
+    person_1 = person.Person("Sven", "Rübennase", academic_title="MBA", born="1990")
     print(person_1)
 
     Person:
@@ -95,6 +94,7 @@ Using MdL::
     gender=male
     last_name=Schwadronius
     legislature=14
+    membership={14}
     parties=[Party(party_name='Grüne', party_entry='unknown', party_exit='unknown')]
     party=Grüne
     peer_preposition=von
@@ -112,6 +112,7 @@ Using MdL::
     gender=male
     last_name=Schwadronius
     legislature=14
+    membership={14}
     parties=[Party(party_name='SPD', party_entry='unknown', party_exit='unknown'),
              Party('GRÜNE', party_entry='unknown', party_exit='unknown')]
     party_name=Grüne
