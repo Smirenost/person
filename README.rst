@@ -7,18 +7,12 @@ Overview
 .. list-table::
     :stub-columns: 1
 
-    * - docs
-      - |docs|
-    * - code quality
-      - |Codacy Badge|
-    * - build
-      - | |build|
-    * - python
+    * - .
+      - | |Codacy Badge| |coverage| |build|
+    * - .
       - | |py3| |supported-versions| |supported-implementations|
-    * - license
-      - | |license|
-    * - update
-      - | |update| |coverage| |travis|
+    * - .
+      - | |license| |update| |docs|
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
     :target: https://person.readthedocs.io/en/latest/?badge=latest
@@ -52,9 +46,6 @@ Overview
 .. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/0LL13/person
 
-.. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
-    :target: https://travis-ci.org/0LL13/person
-    :alt: Travis-CI Build Status
 
 .. end-badges
 
