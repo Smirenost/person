@@ -27,12 +27,3 @@ recursive-include reports *.json
 recursive-include reports *.png
 recursive-include docs *.odt
 recursive-include docs *.txt
-
-# added by check_manifest.py
-include *.mrkdwn
-
-# added by check_manifest.py
-include *.mrkdwn
-
-# added by check_manifest.py
-include *.mrkdwn
