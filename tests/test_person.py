@@ -255,9 +255,11 @@ def test_person_MdL(mdl_fixture):
     assert mdl.parties == [
         Party(party_name="Grüne", party_entry="unknown", party_exit="unknown"),
         Party(
-            party_name="fraktionslos", party_entry="unknown", party_exit="unknown"
-        ),  # noqa
-    ]  # noqa
+            party_name="fraktionslos",
+            party_entry="unknown",
+            party_exit="unknown",  # noqa
+        ),
+    ]
 
 
 def test_person_TooManyFirstNames(toomanyfirstnames_fixture):
@@ -294,11 +296,11 @@ def test_person_AttrDisplay(capsys, attrdisplay_fixture):
         b: str
         c: str
 
-    attr_1 = "späm"
-    attr_2 = "ham"
-    attr_3 = "ew"
+    var_1 = "späm"
+    var_2 = "ham"
+    var_3 = "ew"
 
-    mock_instance = MockClass(attr_1, attr_2, attr_3)
+    mock_instance = MockClass(var_1, var_2, var_3)
     print(mock_instance)
     captured = capsys.readouterr()
 

@@ -43,7 +43,7 @@ class AttrDisplay:
                 "unknown",
                 "ew",
                 None,
-            ]:  # noqa
+            ]:
                 attrs.append(f"{key}={getattr(self, key)}")
         return attrs
 
@@ -213,11 +213,7 @@ class _Person_default:
 
 @dataclass
 class Person(
-    _Peertitle_default,
-    _Academic_title_default,
-    _Person_default,
-    Name,
-    AttrDisplay,  # noqa
+    _Peertitle_default, _Academic_title_default, _Person_default, Name, AttrDisplay,
 ):
     def __post_init__(self):
         Name.__post_init__(self)
@@ -364,13 +360,11 @@ class Politician(
         if self.party_name in self.GERMAN_PARTIES:
             self.parties.append(
                 Party(self.party_name, self.party_entry, self.party_exit)
-            )  # noqa
+            )
         if self.minister and self.minister not in self.offices:
             self.offices.append(self.minister)
 
-    def add_Party(
-        self, party_name, party_entry="unknown", party_exit="unknown"
-    ):  # noqa
+    def add_Party(self, party_name, party_entry="unknown", party_exit="unknown"):
         if party_name in self.GERMAN_PARTIES:
             if self.party_is_in_parties(party_name, party_entry, party_exit):
                 pass
@@ -380,9 +374,7 @@ class Politician(
                 self.party_entry = party_entry
                 self.party_exit = party_exit
 
-    def align_party_entries(
-        self, party, party_name, party_entry, party_exit
-    ) -> Party:  # noqa
+    def align_party_entries(self, party, party_name, party_entry, party_exit) -> Party:
         if party_entry != "unknown" and party.party_entry == "unknown":
             party.party_entry = party_entry
         if party_exit != "unknown" and party.party_exit == "unknown":
@@ -395,7 +387,7 @@ class Politician(
             if party_name == party.party_name:
                 party_updated = self.align_party_entries(
                     party, party_name, party_entry, party_exit
-                )  # noqa
+                )
                 self.parties.remove(party)
                 self.parties.append(party_updated)
                 self.party_entry = party_updated.party_entry
@@ -419,13 +411,13 @@ class _MdL_default:
     parl_vicePres: bool = field(default=False)
     parliament_entry: str = field(default="unknown")  # date string: "11.3.2015"  # noqa
     parliament_exit: str = field(default="unknown")  # dto.
-    speeches: List[str] = field(
-        default_factory=lambda: []
-    )  # identifiers for speeches # noqa
+    speeches: List[str] = field(default_factory=lambda: [])  # identifiers for speeches
     reactions: List[str] = field(
         default_factory=lambda: []
-    )  # identifiers for reactions #noqa
-    membership: Set[str] = field(default_factory=lambda: set())  # terms or years? #noqa
+    )  # identifiers for reactions
+    membership: Set[str] = field(
+        default_factory=lambda: set()
+    )  # years like ["2010", "2011", ...] #noqa
 
 
 @dataclass
@@ -476,7 +468,7 @@ if __name__ == "__main__":
         "Schwadronius",
         party_entry="1990",
         peer_title="Junker von",
-        born="1950",  # noqa
+        born="1950",
     )
     print(mdl)
 

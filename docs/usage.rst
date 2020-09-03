@@ -55,9 +55,8 @@ Using Person::
 
 Using Politician::
 
-    politician = person.Politician("Bärbel", "Gutherz", academic_title="Dr.",
-                                   born="1980", party="SPD",
-                                   electoral_ward="Köln I")
+    politician = person.Politician("SPD", "Bärbel", "Gutherz", academic_title="Dr.",
+                                   born="1980", electoral_ward="Köln I")
     print(politician)
 
     Politician:
@@ -68,19 +67,25 @@ Using Politician::
     first_name=Bärbel
     gender=female
     last_name=Gutherz
-    parties=['SPD']
-    party=SPD
+    parties=[Party(party_name='SPD', party_entry='unknown', party_exit='unknown')]
+    party_name=SPD
     voter_count=121721
     ward_no=13
 
-    politician.add_party("GRÜNE")
-    politician.party='GRÜNE'
-    politician.parties=['SPD', 'GRÜNE']
+    politician.add_Party("GRÜNE", party_entry="2017")
+
+    print(politician)
+
+    Politician:
+    ...
+    parties=[Party(party_name='SPD', party_entry='unknown', party_exit='unknown'),
+             Party('GRÜNE', party_entry='2017', party_exit='unknown')]
+    party_name='GRÜNE'
 
 Using MdL::
 
-    mdl = person.MdL("14", "Tom", "Schwadronius", peer_title="Junker von",
-                     born="1950", party="Grüne")
+    mdl = person.MdL("14", "Grüne", "Tom", "Schwadronius", peer_title="Junker von",
+                     born="1950")
     print(mdl)
 
     MdL:
@@ -90,12 +95,12 @@ Using MdL::
     gender=male
     last_name=Schwadronius
     legislature=14
-    parties=['Grüne']
+    parties=[Party(party_name='Grüne', party_entry='unknown', party_exit='unknown')]
     party=Grüne
     peer_preposition=von
     peer_title=Junker
 
-    mdl.add_party("Grüne")
+    mdl.add_Party("Grüne")
     mdl.change_ward("Düsseldorf II")
     print(mdl)
 
@@ -107,8 +112,9 @@ Using MdL::
     gender=male
     last_name=Schwadronius
     legislature=14
-    parties=['SPD', 'Grüne']
-    party=Grüne
+    parties=[Party(party_name='SPD', party_entry='unknown', party_exit='unknown'),
+             Party('GRÜNE', party_entry='unknown', party_exit='unknown')]
+    party_name=Grüne
     peer_preposition=von
     peer_title=Junker
     voter_count=99022
