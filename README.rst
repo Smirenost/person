@@ -97,7 +97,6 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 Installation
 ------------
 
-::
 
     pip install person-roles
 
