@@ -40,7 +40,6 @@ jupyter-core==4.6.3
 keyring==21.4.0
 lxml==4.5.2
 mando==0.7.0
-markupsafe==1.1.1
 mando==0.7.0
 markupsafe==2.0.0a1
 mccabe==0.6.1
