@@ -47,6 +47,8 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+.codacy-coverage/
+.codacy-coverage-reporter
 
 # Translations
 *.mo
