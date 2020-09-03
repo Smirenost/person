@@ -4,7 +4,7 @@
 
 from setuptools import find_packages, setup  # type: ignore
 
-with open("README.md") as readme_file:
+with open("README.rst") as readme_file:
     long_description = readme_file.read()
 
 with open("HISTORY.rst") as history_file:
@@ -52,7 +52,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/0LL13/person",
-    version="0.1.8",
+    version="0.1.9",
     zip_safe=False,
     extras_require={"dev": ["check-manifest"], "test": ["pytest-cov"],},
     project_urls={
@@ -60,10 +60,3 @@ setup(
         "Source": "https://github.com/0LL13/person",
     },
 )
-
-
-#    entry_points={
-#        'console_scripts': [
-#            'person-roles = person-roles:main',
-#            ],
-#        },

@@ -21,18 +21,18 @@ Overview
       - | |update| |coverage| |travis|
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
-        :target: https://person.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
+    :target: https://person.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 .. |Codacy Badge| image:: https://app.codacy.com/project/badge/Grade/5a29d30f3ec7470cb17085a29a4c6a8f)]
-     :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
+    :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade
 
 .. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
     :alt: Travis-CI Build Status
 
 .. |py3| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
-     :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Python 3
+    :target: https://pyup.io/repos/github/0LL13/person/
+    :alt: Python 3
 
 .. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
     :alt: Supported versions
@@ -46,11 +46,11 @@ Overview
     :alt: CocoaPods
 
 .. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
-     :target: https://pyup.io/repos/github/0LL13/person/
-     :alt: Updates
+    :target: https://pyup.io/repos/github/0LL13/person/
+    :alt: Updates
 
 .. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/0LL13/person
+    :target: https://codecov.io/gh/0LL13/person
 
 .. |travis| image:: https://travis-ci.org/0LL13/person.svg?branch=master
     :target: https://travis-ci.org/0LL13/person
@@ -58,8 +58,7 @@ Overview
 
 .. end-badges
 
-Roles (academic, politician, ...)  of persons, their particulars
-
+A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
 Features
 --------
@@ -80,27 +79,8 @@ These roles have been sketched::
     Politician - electoral_ward, ward_no, voter_count, minister, offices, party, parties
     MdL - legislature, parl_pres, parl_vicePres
 
-..
-
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-
-
-Installation
-------------
-
-::
-
-    pip install person-roles
-
 Usage
------
+=====
 
 ::
 
@@ -115,6 +95,20 @@ Usage
     last_name=Smith
     middle_name_1=H.
 
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+Installation
+------------
+
+::
+
+    pip install person-roles
 
 Contribute
 ----------
