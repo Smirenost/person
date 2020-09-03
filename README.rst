@@ -18,11 +18,7 @@ Overview
     * - license
       - | |license|
     * - update
-      - | |update|
-    * - coverage
-      - | |coverage| 
-    * - CI integration
-      - | |travis|
+      - | |update| |coverage| |travis|
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
         :target: https://person.readthedocs.io/en/latest/?badge=latest
