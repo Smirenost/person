@@ -213,7 +213,11 @@ class _Person_default:
 
 @dataclass
 class Person(
-    _Peertitle_default, _Academic_title_default, _Person_default, Name, AttrDisplay,
+    _Peertitle_default,
+    _Academic_title_default,
+    _Person_default,
+    Name,
+    AttrDisplay,  # noqa
 ):
     def __post_init__(self):
         Name.__post_init__(self)
@@ -259,6 +263,7 @@ class _Party_base:
         "F.D.P.",
         "GRÜNE",
         "Grüne",
+        "Bündnis 90/Die Grünen",
         "AfD",
         "Die Partei",
         "PIRATEN",
@@ -364,7 +369,9 @@ class Politician(
         if self.minister and self.minister not in self.offices:
             self.offices.append(self.minister)
 
-    def add_Party(self, party_name, party_entry="unknown", party_exit="unknown"):
+    def add_Party(
+        self, party_name, party_entry="unknown", party_exit="unknown"
+    ):  # noqa
         if party_name in self.GERMAN_PARTIES:
             if self.party_is_in_parties(party_name, party_entry, party_exit):
                 pass
@@ -374,7 +381,9 @@ class Politician(
                 self.party_entry = party_entry
                 self.party_exit = party_exit
 
-    def align_party_entries(self, party, party_name, party_entry, party_exit) -> Party:
+    def align_party_entries(
+        self, party, party_name, party_entry, party_exit
+    ) -> Party:  # noqa
         if party_entry != "unknown" and party.party_entry == "unknown":
             party.party_entry = party_entry
         if party_exit != "unknown" and party.party_exit == "unknown":
@@ -411,13 +420,15 @@ class _MdL_default:
     parl_vicePres: bool = field(default=False)
     parliament_entry: str = field(default="unknown")  # date string: "11.3.2015"  # noqa
     parliament_exit: str = field(default="unknown")  # dto.
-    speeches: List[str] = field(default_factory=lambda: [])  # identifiers for speeches
+    speeches: List[str] = field(
+        default_factory=lambda: []
+    )  # identifiers for speeches  # noqa
     reactions: List[str] = field(
         default_factory=lambda: []
     )  # identifiers for reactions
     membership: Set[str] = field(
         default_factory=lambda: set()
-    )  # years like ["2010", "2011", ...] #noqa
+    )  # years like ["2010", "2011", ...]
 
 
 @dataclass
