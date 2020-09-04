@@ -11,10 +11,6 @@ Overview
 .. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
     :alt: Travis-CI Build Status
 
-.. |py3| image:: https://pyup.io/repos/github/0LL13/person/python-3-shield.svg
-    :target: https://pyup.io/repos/github/0LL13/person/
-    :alt: Python 3
-
 .. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
     :alt: Supported versions
     :target: https://pypi.python.org/pypi/person-roles
@@ -40,7 +36,7 @@ Overview
     :widths: auto 
 
     * - limits
-      - |py3| |supported-versions| |supported-implementations|
+      - |pypi| |supported-versions| |supported-implementations|
     * - code
       - |Codacy Badge| |coverage| |build| |update|
     * - legal
@@ -81,7 +77,6 @@ Usage
     Academic:
     academic_title=MBA
     first_name=Thomas
-    gender=male
     last_name=Smith
     middle_name_1=H.
 
