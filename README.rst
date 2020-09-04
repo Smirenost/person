@@ -37,14 +37,14 @@ Overview
     :alt: PyPI
 
 .. list-table::
-    :widths: 10 100
+    :widths: auto 
 
     * - .
       - | |Codacy Badge| |coverage| |build|
     * - .
       - | |py3| |supported-versions| |supported-implementations|
     * - .
-      - | |license| |update| |docs| |pypi|
+      - | |license| |update| |docs|
 
 A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
