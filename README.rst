@@ -37,7 +37,7 @@ Overview
     :alt: PyPI
 
 .. list-table::
-    :widths: 10 90 
+    :widths: auto 
 
     * - limits
       - |py3| |supported-versions| |supported-implementations|
@@ -46,7 +46,7 @@ Overview
     * - legal
       - |license|
     * - read
-        |docs|
+      - |docs|
 
 A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
@@ -74,12 +74,13 @@ Usage
 
     import person
 
-    Tom = person.Academic("Thomas H.", "Smith", academic_title="MBA")
-    print(Tom)
+    tom = person.Academic("Thomas H.", "Smith", academic_title="MBA")
+    print(tom)
 
     Academic:
     academic_title=MBA
     first_name=Thomas
+    gender=male
     last_name=Smith
     middle_name_1=H.
 
