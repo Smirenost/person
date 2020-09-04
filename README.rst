@@ -72,6 +72,7 @@ These roles have been sketched::
 Usage
 =====
 ::
+
     import person
 
     tom = person.Academic("Thomas H.", "Smith", academic_title="MBA")
@@ -95,6 +96,7 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 Installation
 ------------
 ::
+
     pip install person-roles
 
 Contribute
