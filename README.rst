@@ -37,7 +37,7 @@ Overview
     :alt: PyPI
 
 .. list-table::
-    :widths: auto 
+    :widths: 5 95 
 
     * - .
       - | |Codacy Badge| |coverage| |build|
