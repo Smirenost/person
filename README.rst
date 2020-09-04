@@ -12,7 +12,7 @@ Overview
     * - .
       - | |py3| |supported-versions| |supported-implementations|
     * - .
-      - | |license| |update| |docs|
+      - | |license| |update| |docs| |pypi|
 
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
     :target: https://person.readthedocs.io/en/latest/?badge=latest
@@ -46,6 +46,9 @@ Overview
 .. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/0LL13/person
 
+.. |pypi| image:: https://pypi/v/person-roles
+    :target: https://img.shields.io/pypi/v/person-roles
+    :alt: PyPI
 
 .. end-badges
 
