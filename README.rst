@@ -100,8 +100,11 @@ Installation
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/0LL13/person/issues
-- Source: https://github.com/0LL13/person
+`Issue Tracker`_
+Source_
+
+.. _`Issue Tracker`: https://github.com/0LL13/person/issues
+.. _Source: https://github.com/0LL13/person
 
 Support
 -------

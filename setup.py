@@ -5,8 +5,6 @@
 
 from setuptools import find_packages, setup  # type: ignore
 
-__docformat__ = "rstructuredtext en"
-
 with open("README.rst") as readme_file:
     long_description = readme_file.read()
 
@@ -52,7 +50,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/0LL13/person",
-    version="0.1.7",
+    version="0.1.8",
     zip_safe=False,
     extras_require={"dev": ["check-manifest"], "test": ["pytest-cov"],},
     project_urls={
