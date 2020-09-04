@@ -32,13 +32,16 @@ Overview
 .. |pypi| image:: https://img.shields.io/pypi/v/person-roles
     :alt: PyPI
 
+.. |pull| image:: https://img.shields.io/github/issues-pr/0LL13/person
+    :alt: GitHub pull requests
+
 .. list-table::
     :widths: auto 
 
     * - limits
       - |pypi| |supported-versions| |supported-implementations|
     * - code
-      - |Codacy Badge| |coverage| |build| |update|
+      - |Codacy Badge| |coverage| |build| |update| |pull|
     * - legal
       - |license|
     * - read
