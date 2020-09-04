@@ -70,8 +70,6 @@ These roles have been sketched::
 Usage
 =====
 
-::
-
     import person
 
     Tom = person.Academic("Thomas H.", "Smith", academic_title="MBA")

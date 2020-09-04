@@ -10,9 +10,6 @@ __docformat__ = "rstructuredtext en"
 with open("README.rst") as readme_file:
     long_description = readme_file.read()
 
-with open("HISTORY.rst") as history_file:
-    history = history_file.read()
-
 requirements = [
     "beautifulsoup4",
     "lxml",
@@ -42,11 +39,11 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Topic :: Other/Nonlisted Topic",
     ],
-    description="Roles of persons, their particulars",
+    description="A set of dataclasses concerning roles of persons and their particulars",
     install_requires=requirements,
     license="MIT license",
-    long_description=long_description + "\n\n" + history,
-    long_description_content_type="text/markdown",
+    long_description=long_description,
+    long_description_content_type="text/restructered",
     include_package_data=True,
     keywords="person, roles",
     name="person-roles",
@@ -55,7 +52,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/0LL13/person",
-    version="0.1.1",
+    version="0.1.2",
     zip_safe=False,
     extras_require={"dev": ["check-manifest"], "test": ["pytest-cov"],},
     project_urls={
