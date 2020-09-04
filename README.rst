@@ -9,18 +9,20 @@ Overview
     :target: https://www.codacy.com/manual/0LL13/person?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=0LL13/person&amp;utm_campaign=Badge_Grade)  
 
 .. |build| image:: https://travis-ci.org/0LL13/person.svg?branch=master
+    :target: https://travis-ci.org/github/0LL13/person
     :alt: Travis-CI Build Status
 
 .. |supported-versions| image:: https://img.shields.io/pypi/pyversions/person-roles.svg
+    :target: https://www.python.org/
     :alt: Supported versions
-    :target: https://pypi.python.org/pypi/person-roles
 
 .. |supported-implementations| image:: https://img.shields.io/pypi/implementation/person-roles.svg
+    :target: https://realpython.com/cpython-source-code-guide/ 
     :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/person-roles
 
-.. |license| image:: https://img.shields.io/cocoapods/l/AFNetworking.svg
-    :alt: CocoaPods
+.. |license| image:: https://img.shields.io/pypi/l/person-roles
+    :target: https://opensource.org/licenses/MIT
+    :alt: PyPI - License
 
 .. |update| image:: https://pyup.io/repos/github/0LL13/person/shield.svg
     :target: https://pyup.io/repos/github/0LL13/person/
@@ -30,9 +32,11 @@ Overview
     :target: https://codecov.io/gh/0LL13/person
 
 .. |pypi| image:: https://img.shields.io/pypi/v/person-roles
+    :target: https://pypi.org/project/person-roles/
     :alt: PyPI
 
 .. |pull| image:: https://img.shields.io/github/issues-pr/0LL13/person
+    :target: https://github.com/0LL13/person/pulls
     :alt: GitHub pull requests
 
 .. list-table::
