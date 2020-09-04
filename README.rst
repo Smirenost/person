@@ -1,16 +1,6 @@
 Overview
 ========
 
-.. list-table::
-    :widths: 10 100
-
-    * - .
-      - | |Codacy Badge| |coverage| |build|
-    * - .
-      - | |py3| |supported-versions| |supported-implementations|
-    * - .
-      - | |license| |update| |docs| |pypi|
-
 .. |docs| image:: https://readthedocs.org/projects/person/badge/?version=latest
     :target: https://person.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -43,10 +33,18 @@ Overview
 .. |coverage| image:: https://codecov.io/gh/0LL13/person/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/0LL13/person
 
-.. |pypi| image:: https://pypi/v/person-roles
-    :target: https://img.shields.io/pypi/v/person-roles
+.. |pypi| image:: https://img.shields.io/pypi/v/person-roles
     :alt: PyPI
 
+.. list-table::
+    :widths: 10 100
+
+    * - .
+      - | |Codacy Badge| |coverage| |build|
+    * - .
+      - | |py3| |supported-versions| |supported-implementations|
+    * - .
+      - | |license| |update| |docs| |pypi|
 
 A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
