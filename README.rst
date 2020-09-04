@@ -40,11 +40,11 @@ Overview
     :widths: 5 95 
 
     * - .
-      - | |Codacy Badge| |coverage| |build|
+      - |Codacy Badge| |coverage| |build|
     * - .
-      - | |py3| |supported-versions| |supported-implementations|
+      - |py3| |supported-versions| |supported-implementations|
     * - .
-      - | |license| |update| |docs|
+      - |license| |update| |docs|
 
 A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
