@@ -69,7 +69,7 @@ These roles have been sketched::
     Politician - electoral_ward, ward_no, voter_count, minister, offices, party, parties
     MdL - legislature, parl_pres, parl_vicePres
 
-Usage
+Usage::
 =====
 
     import person
@@ -92,9 +92,8 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
-Installation
+Installation::
 ------------
-
 
     pip install person-roles
 
