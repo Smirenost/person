@@ -1,9 +1,8 @@
 Overview
 ========
 
-.. start-badges
-
 .. list-table::
+    :widths: 10 100
     :stub-columns: 1
 
     * - .
@@ -49,7 +48,6 @@ Overview
     :target: https://img.shields.io/pypi/v/person-roles
     :alt: PyPI
 
-.. end-badges
 
 A set of dataclasses concerning roles (academic, politician, ...)  of persons and their particulars
 
