@@ -43,7 +43,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     long_description=long_description,
-    long_description_content_type="text/restructered",
+    long_description_content_type="text/x-rst",
     include_package_data=True,
     keywords="person, roles",
     name="person-roles",
@@ -52,7 +52,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/0LL13/person",
-    version="0.1.2",
+    version="0.1.3",
     zip_safe=False,
     extras_require={"dev": ["check-manifest"], "test": ["pytest-cov"],},
     project_urls={
