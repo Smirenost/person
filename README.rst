@@ -3,7 +3,6 @@ Overview
 
 .. list-table::
     :widths: 10 100
-    :stub-columns: 1
 
     * - .
       - | |Codacy Badge| |coverage| |build|
