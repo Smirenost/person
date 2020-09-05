@@ -1,6 +1,6 @@
 alabaster==0.7.12
 appdirs==1.4.4
-attrs==20.1.0
+attrs==20.2.0
 babel==2.8.0
 bandit==1.6.2
 beautifulsoup4==4.9.1
