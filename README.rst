@@ -39,11 +39,17 @@ Overview
     :target: https://github.com/0LL13/person/pulls
     :alt: GitHub pull requests
 
+.. |climate| image:: https://api.codeclimate.com/v1/badges/714a256d1edf47898a22/maintainability
+   :target: https://codeclimate.com/github/0LL13/person/maintainability
+   :alt: Maintainability
+
+
+
 .. list-table::
     :widths: auto 
 
     * - limits
-      - |pypi| |supported-versions| |supported-implementations|
+      - |pypi| |supported-versions| |supported-implementations| |climate|
     * - code
       - |Codacy Badge| |coverage| |build| |update| |pull|
     * - legal
@@ -104,8 +110,8 @@ Installation
 Contribute
 ----------
 
-`Issue Tracker`_
-Source_
+| `Issue Tracker`_
+| Source_
 
 .. _`Issue Tracker`: https://github.com/0LL13/person/issues
 .. _Source: https://github.com/0LL13/person
