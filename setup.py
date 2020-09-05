@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """The setup script."""
 
@@ -37,7 +37,7 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Topic :: Other/Nonlisted Topic",
     ],
-    description="A set of dataclasses concerning roles of persons and their particulars",
+    description="A set of dataclasses concerning roles of persons and their particulars",  # noqa
     install_requires=requirements,
     license="MIT license",
     long_description=long_description,
@@ -50,7 +50,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/0LL13/person",
-    version="0.1.10",
+    version="0.1.9",
     zip_safe=False,
     extras_require={
         "dev": ["check-manifest"],

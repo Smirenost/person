@@ -1,22 +1,24 @@
 # Config file for automatic testing at travis-ci.com
 
+build:
+  nodes:
+    coverage:
+      tests:
+        override:
+          - command: './run-tests.sh'
+            coverage:
+              file: '.coverage'
+              config_file: '.coveragerc'
+              format: 'py-cc'
 env:
-  global:
-    - CC_TEST_REPORTER_ID=bf8fe8ccdc0d398f84860350ae1d2b492969b28c48d904a711aa33302292b7b1
-    - TOX_ENV=py38
+  - TOX_ENV=py38
 language: python
 python:
   - 3.8
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
-
 # Command to run tests, e.g. python setup.py test
 script: tox -e $TOX_ENV
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 # Assuming you have installed the travis-ci CLI tool, after you
 # create the Github repo and add it to Travis, run the
 # following command to finish PyPI deployment setup:
