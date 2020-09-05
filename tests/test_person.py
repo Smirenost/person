@@ -152,7 +152,10 @@ def test_person_Politician(politician_fixture):
     ]  # noqa
 
     pol_2 = person.Politician(
-        "CDU", "Regina", "Dinther", electoral_ward="Landesliste",
+        "CDU",
+        "Regina",
+        "Dinther",
+        electoral_ward="Landesliste",
     )  # noqa
 
     assert pol_2.electoral_ward == "ew"
