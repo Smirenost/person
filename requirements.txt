@@ -65,7 +65,7 @@ pycparser==2.20
 pyflakes==2.2.0
 pygments==2.6.1
 pyparsing==3.0.0a2
-pyrsistent==0.16.0
+pyrsistent==0.17.2
 pytest-cov==2.10.1
 pytest==6.0.1
 pytz==2020.1
