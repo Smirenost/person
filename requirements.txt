@@ -54,7 +54,7 @@ pathspec==0.8.0
 pbr==5.5.0
 pep517==0.8.2
 pkginfo==1.5.0.1
-plotly==4.9.0
+plotly==4.10.0
 pluggy==0.13.1
 progress==1.5
 pre-commit==2.7.1
