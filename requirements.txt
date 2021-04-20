@@ -59,7 +59,7 @@ pluggy==0.13.1
 progress==1.5
 pre-commit==2.7.1
 progress==1.5
-py==1.9.0
+py==1.10.0
 pycodestyle==2.6.0
 pycparser==2.20
 pyflakes==2.2.0
